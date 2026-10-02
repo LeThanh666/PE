@@ -1,0 +1,2535 @@
+                          CONFORMAL (R)
+                   Version 24.10-s300 (06-Dec-2024) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2024. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 662 days old. You can download the latest version from http://downloads.cadence.com.
+
+0
+// Command: usage -auto -elapse
+// Command: usage -auto -elapse
+CPU time     : 0.53    seconds
+Elapse time  : 4       seconds
+Memory usage : 91.15   M bytes
+0
+// Command: set_verification_information rtl_fv_map_db
+// Command: set_verification_information rtl_fv_map_db
+// Verification information is set to /home/s23520966_sonnm/THANHLE/PE/Synthesis/rtl_fv_map_db.
+0
+CPU time     : 1.05    seconds
+Elapse time  : 5       seconds
+Memory usage : 213.60  M bytes
+// Command: read_implementation_information fv/ei_pe -revised fv_map
+// Command: read_implementation_information fv/ei_pe -revised fv_map
+// Reading implementation information from fv/ei_pe ...
+// Note: Implementation information 'fv_map.fv.json' will be used
+================================================================================
+          Information Category                         Count
+--------------------------------------------------------------------------------
+     Sequential instance phase                          5953
+       Sequential optimization                          1441
+        Sequential duplication                             0
+         Boundary optimization                             0
+            Synthesis equation                             0
+    Combinational loop breaker                             0
+                       Mapping                             0
+================================================================================
+// Note: Read implementation information successfully.
+0
+CPU time     : 1.23    seconds
+Elapse time  : 7       seconds
+Memory usage : 236.43  M bytes
+// Command: set_parallel_option -threads 1,4 -norelease_license
+// Command: set_parallel_option -threads 1,4 -norelease_license
+// Number of threads is set to 1,4.
+0
+// Command: set_compare_options -threads 1,4
+// Command: set_compare_options -threads 1,4
+Set computing threads of compare to 1,4.
+0
+// Command: set env(RC_VERSION)     "21.10-p002_1"
+21.10-p002_1
+// Command: set env(CDN_SYNTH_ROOT) "/home/eda/cadence/GENUS211/tools.lnx86"
+/home/eda/cadence/GENUS211/tools.lnx86
+// Command: set CDN_SYNTH_ROOT      "/home/eda/cadence/GENUS211/tools.lnx86"
+/home/eda/cadence/GENUS211/tools.lnx86
+// Command: set env(CW_DIR) "/home/eda/cadence/GENUS211/tools.lnx86/lib/chipware"
+/home/eda/cadence/GENUS211/tools.lnx86/lib/chipware
+// Command: set CW_DIR      "/home/eda/cadence/GENUS211/tools.lnx86/lib/chipware"
+/home/eda/cadence/GENUS211/tools.lnx86/lib/chipware
+// Command: set_undefined_cell black_box -noascend -both
+// Command: set_undefined_cell black_box -noascend -both
+0
+// Command: add_search_path ../LIB/ -library -both
+// Command: add_search_path ../LIB/ -library -both
+0
+// Command: read_library -liberty -both /home/s23520966_sonnm/THANHLE/PE/Synthesis/../LIB/slow_vdd1v0_basiccells.lib
+// Command: read_library -liberty -both /home/s23520966_sonnm/THANHLE/PE/Synthesis/../LIB/slow_vdd1v0_basiccells.lib
+// Parsing file /home/s23520966_sonnm/THANHLE/PE/Synthesis/../LIB/slow_vdd1v0_basiccells.lib ...
+// Warning: (RTL9.17) Cell doesn't have any output pins or all output pins are undriven (blackboxed) (occurrence:1)
+// Note: (RTL9.26) Liberty pin with internal_node use default input_map (occurrence:16)
+// Note: Read Liberty library successfully
+0
+CPU time     : 1.45    seconds
+Elapse time  : 8       seconds
+Memory usage : 254.46  M bytes
+// Command: set_undriven_signal 0 -golden
+// Command: set_undriven_signal 0 -golden
+0
+// Command: set lec_version_required "16.20100"
+16.20100
+// Command: if {$lec_version >= $lec_version_required} {
+//              set_naming_style genus -golden
+//          } else {
+//              set_naming_style rc -golden
+//          }
+// Command: set_naming_style genus -golden
+0
+// Command: set_naming_rule "%s\[%d\]" -instance_array -golden
+// Command: set_naming_rule %s[%d] -instance_array -golden
+0
+// Command: set_naming_rule "%s_reg" -register -golden
+// Command: set_naming_rule %s_reg -register -golden
+0
+// Command: set_naming_rule "%L.%s" "%L\[%d\].%s" "%s" -instance -golden
+// Command: set_naming_rule %L.%s %L[%d].%s %s -instance -golden
+0
+// Command: set_naming_rule "%L.%s" "%L\[%d\].%s" "%s" -variable -golden
+// Command: set_naming_rule %L.%s %L[%d].%s %s -variable -golden
+0
+// Command: set lec_version_required "17.10200"
+17.10200
+// Command: if {$lec_version >= $lec_version_required} {
+//              set_naming_rule -ungroup_separator {_} -golden
+//          }
+// Command: set_naming_rule -ungroup_separator _ -golden
+0
+// Command: set lec_version_required "17.20301"
+17.20301
+// Command: if {$lec_version >= $lec_version_required} {
+//              set_hdl_options -const_port_extend
+//          }
+// Command: set_hdl_options -const_port_extend
+0
+// Command: set_hdl_options -VERILOG_INCLUDE_DIR "sep:src:cwd"
+// Command: set_hdl_options -VERILOG_INCLUDE_DIR sep:src:cwd
+0
+// Command: delete_search_path -all -design -golden
+// Command: delete_search_path -all -design -golden
+0
+// Command: add_search_path ../RTL/ -design -golden
+// Command: add_search_path ../RTL/ -design -golden
+0
+// Command: read_design -enumconstraint -define SYNTHESIS  -merge bbox -golden -lastmod -noelab -sv09  ../RTL/ei_activation_selector.sv ../RTL/ei_fp16_maxpooling.sv ../RTL/ei_pe.sv ../RTL/ei_pe_muxpool.sv ../RTL/ei_tree_adder.sv ../RTL/ei_accumulator_fp16.v ../RTL/ei_activation_lut.v ../RTL/ei_adder22.v ../RTL/ei_adderN.v ../RTL/ei_adder_fp16.v ../RTL/ei_counter.v ../RTL/ei_fp16_2num_comparator.v ../RTL/ei_fp16_is_inf.v ../RTL/ei_fp16_is_nan.v ../RTL/ei_fp16_is_zero.v ../RTL/ei_full_adder.v ../RTL/ei_lzcN.v ../RTL/ei_multiplier.v ../RTL/ei_multiplier_fp16.v ../RTL/ei_mux16.v ../RTL/ei_mux2.v ../RTL/ei_mux22.v ../RTL/ei_muxN.v ../RTL/ei_residual_connector.v ../RTL/ei_shift_buffer.v ../RTL/ei_shift_left.v ../RTL/ei_shr_varN_sticky.v ../RTL/ei_subtractorN.v ../RTL/regN.v
+// Command: read_design -enumconstraint -define SYNTHESIS -merge bbox -golden -lastmod -noelab -sv09 ../RTL/ei_activation_selector.sv ../RTL/ei_fp16_maxpooling.sv ../RTL/ei_pe.sv ../RTL/ei_pe_muxpool.sv ../RTL/ei_tree_adder.sv ../RTL/ei_accumulator_fp16.v ../RTL/ei_activation_lut.v ../RTL/ei_adder22.v ../RTL/ei_adderN.v ../RTL/ei_adder_fp16.v ../RTL/ei_counter.v ../RTL/ei_fp16_2num_comparator.v ../RTL/ei_fp16_is_inf.v ../RTL/ei_fp16_is_nan.v ../RTL/ei_fp16_is_zero.v ../RTL/ei_full_adder.v ../RTL/ei_lzcN.v ../RTL/ei_multiplier.v ../RTL/ei_multiplier_fp16.v ../RTL/ei_mux16.v ../RTL/ei_mux2.v ../RTL/ei_mux22.v ../RTL/ei_muxN.v ../RTL/ei_residual_connector.v ../RTL/ei_shift_buffer.v ../RTL/ei_shift_left.v ../RTL/ei_shr_varN_sticky.v ../RTL/ei_subtractorN.v ../RTL/regN.v
+// Parsing file ../RTL//../RTL/ei_activation_selector.sv ...
+// Parsing file ../RTL//../RTL/ei_fp16_maxpooling.sv ...
+// Parsing file ../RTL//../RTL/ei_pe.sv ...
+// Parsing file ../RTL//../RTL/ei_pe_muxpool.sv ...
+// Parsing file ../RTL//../RTL/ei_tree_adder.sv ...
+// Parsing file ../RTL//../RTL/ei_accumulator_fp16.v ...
+// Parsing file ../RTL//../RTL/ei_activation_lut.v ...
+// Parsing file ../RTL//../RTL/ei_adder22.v ...
+// Parsing file ../RTL//../RTL/ei_adderN.v ...
+// Parsing file ../RTL//../RTL/ei_adder_fp16.v ...
+// Parsing file ../RTL//../RTL/ei_counter.v ...
+// Parsing file ../RTL//../RTL/ei_fp16_2num_comparator.v ...
+// Parsing file ../RTL//../RTL/ei_fp16_is_inf.v ...
+// Parsing file ../RTL//../RTL/ei_fp16_is_nan.v ...
+// Parsing file ../RTL//../RTL/ei_fp16_is_zero.v ...
+// Parsing file ../RTL//../RTL/ei_full_adder.v ...
+// Parsing file ../RTL//../RTL/ei_lzcN.v ...
+// Parsing file ../RTL//../RTL/ei_multiplier.v ...
+// Parsing file ../RTL//../RTL/ei_multiplier_fp16.v ...
+// Parsing file ../RTL//../RTL/ei_mux16.v ...
+// Parsing file ../RTL//../RTL/ei_mux2.v ...
+// Parsing file ../RTL//../RTL/ei_mux22.v ...
+// Parsing file ../RTL//../RTL/ei_muxN.v ...
+// Parsing file ../RTL//../RTL/ei_residual_connector.v ...
+// Parsing file ../RTL//../RTL/ei_shift_buffer.v ...
+// Parsing file ../RTL//../RTL/ei_shift_left.v ...
+// Parsing file ../RTL//../RTL/ei_shr_varN_sticky.v ...
+// Parsing file ../RTL//../RTL/ei_subtractorN.v ...
+// Parsing file ../RTL//../RTL/regN.v ...
+0
+// Command: elaborate_design -golden -root {ei_pe} -rootonly -rootonly  
+// Command: elaborate_design -golden -root ei_pe -rootonly -rootonly
+// Golden root module is set to 'ei_pe'
+// Warning: (RTL1.2) Variable/signal is assigned by multiple non-blocking assignments (occurrence:2)
+// Warning: (RTL1.5b) Potential loss of RHS msb or carry-out bit (occurrence:11)
+// Warning: (RTL1.9c) Parameter bit width is sufficient to hold RHS value but does not match RHS bit width (occurrence:1)
+// Note: (RTL1.9h) Parameter declaration with no type or range specification (occurrence:45)
+// Warning: (RTL2.2) Variable is referenced but never assigned (occurrence:32768)
+// Note: (RTL5.5a) Default case item with non-X assignment(s) (occurrence:4)
+// Note: (RTL5.7) Default case item with inconsistent assignment(s). (occurrence:4)
+// Warning: (RTL7.4) Array index in LHS might be out of range (occurrence:1)
+// Warning: (RTL7.10d) Comparison with positive constant of different signedness (occurrence:1)
+// Warning: (RTL7.11b) Unsigned reference with index/part selection to a signed variable (occurrence:3)
+// Warning: (RTL14) Signal has input but it has no output (occurrence:17)
+// Warning: (RTL14.1) Fanout load of the signal is removed (occurrence:3)
+// Note: (VLG6.4) Supported system datapath function call (occurrence:3)
+// Note: (VLG9.2) The `define macro is used (occurrence:1)
+// Note: (SV3.4) Zero replication in concatenation is considered to have a size of zero and is ignored (SystemVerilog 2009 or later) (occurrence:1)
+// Warning: (DIR6.1) Ignored compiler directive is detected (occurrence:27)
+// Warning: (IGN1.1) Initial construct is not supported. The entire initial construct will be ignored (occurrence:1)
+// Warning: (IGN4) Attribute instance(s) are ignored (occurrence:1)
+// Note: (HRC3.5b) Open output port connection is detected (occurrence:11)
+// Warning: (HRC3.10a) An input port is declared, but it is not completely used in the module (occurrence:13)
+// Warning: There are 32768 undriven nets in Golden
+// Warning: There are 32768 undriven nets in Golden
+0
+CPU time     : 2.01    seconds
+Elapse time  : 11      seconds
+Memory usage : 305.09  M bytes
+// Command: read_design -verilog95   -revised -lastmod -noelab fv/ei_pe/fv_map.v.gz
+// Command: read_design -verilog95 -revised -lastmod -noelab fv/ei_pe/fv_map.v.gz
+// Parsing file fv/ei_pe/fv_map.v.gz ...
+0
+CPU time     : 2.90    seconds
+Elapse time  : 13      seconds
+Memory usage : 353.07  M bytes
+// Command: elaborate_design -revised -root {ei_pe}
+// Command: elaborate_design -revised -root ei_pe
+// Revised root module is set to 'ei_pe'
+// Warning: (RTL14) Signal has input but it has no output (occurrence:4)
+0
+CPU time     : 3.91    seconds
+Elapse time  : 14      seconds
+Memory usage : 348.98  M bytes
+// Command: uniquify -all -nolib -golden
+// Command: uniquify -all -nolib -golden
+Uniquified 10 instance(s) referring to module 'ei_fp16_2num_comparator' in Golden
+Uniquified 17 instance(s) referring to module 'ei_adder_fp16' in Golden
+Uniquified 17 instance(s) referring to module 'ei_adderN_WIDTH11' in Golden
+Uniquified 17 instance(s) referring to module 'ei_muxN_WIDTH6' in Golden
+Uniquified 53 instance(s) referring to module 'ei_adderN_WIDTH6' in Golden
+Uniquified 35 instance(s) referring to module 'ei_muxN_WIDTH14' in Golden
+Uniquified 17 instance(s) referring to module 'ei_subtractorN_WIDTH15' in Golden
+Uniquified 17 instance(s) referring to module 'ei_adderN_WIDTH15' in Golden
+Uniquified 17 instance(s) referring to module 'ei_subtractorN_WIDTH11' in Golden
+Uniquified 89 instance(s) referring to module 'ei_subtractorN_WIDTH6' in Golden
+Uniquified 71 instance(s) referring to module 'ei_muxN_WIDTH11' in Golden
+Uniquified 71 instance(s) referring to module 'ei_muxN_WIDTH5' in Golden
+Uniquified 71 instance(s) referring to module 'ei_mux16' in Golden
+Uniquified 8 instance(s) referring to module 'ei_muxN_WIDTH16' in Golden
+Uniquified 9 instance(s) referring to module 'ei_multiplier_fp16' in Golden
+Uniquified 9 instance(s) referring to module 'ei_subtractorN_WIDTH7' in Golden
+Uniquified 9 instance(s) referring to module 'ei_multiplier' in Golden
+Uniquified 99 instance(s) referring to module 'ei_adder22' in Golden
+Uniquified 109 instance(s) referring to module 'ei_mux22' in Golden
+Uniquified 19 module(s)
+0
+CPU time     : 4.60    seconds
+Elapse time  : 16      seconds
+Memory usage : 371.55  M bytes
+// Command: report_design_data
+// Command: report_design_data
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules     10880            4414
+Library-cells       4103           40396
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT              331                  331
+OUTPUT             181                  181
+--------------------------------------------
+AND        *     27695                16622
+BUF        *        56                  172
+DFF        *      6942                 5953
+INV        *      8177                19149
+MUX        *     55448                    0
+NAND       *        20                12171
+NOR        *       225                11896
+OR         *     16605                11304
+WIRE       *     16916                 4399
+XNOR       *       320                 1463
+XOR        *      8572                  784
+------ word-level --------------------------
+ADD        *        48                    0
+EQ         *         1                    0
+GE         *        47                    0
+GT         *        11                    0
+LE         *        21                    0
+LT         *       507                    0
+SLL        *        18                    0
+SRL        *        36                    0
+SUBTRACT   *         4                    0
+WINV       *       136                    0
+WMUX       *      3243                    0
+WSEL       *        31                    0
+--------------------------------------------
+Total           140976                83913
+
+0
+// Command: report_black_box
+// Command: report_black_box
+0
+// Command: set_flatten_model -seq_constant
+// Command: set_flatten_model -seq_constant
+0
+// Command: set_flatten_model -seq_constant_x_to 0
+// Command: set_flatten_model -seq_constant_x_to 0
+0
+// Command: set_flatten_model -nodff_to_dlat_zero
+// Command: set_flatten_model -nodff_to_dlat_zero
+0
+// Command: set_flatten_model -nodff_to_dlat_feedback
+// Command: set_flatten_model -nodff_to_dlat_feedback
+0
+// Command: set_flatten_model -hier_seq_merge
+// Command: set_flatten_model -hier_seq_merge
+0
+// Command: set_flatten_model -balanced_modeling
+// Command: set_flatten_model -balanced_modeling
+0
+// Command: add_module_attribute ei_pe -pipeline_retime -both
+// Command: add_module_attribute ei_pe -pipeline_retime -both
+0
+// Command: add_noblack_box ei_pe -submodules -both
+// Command: add_noblack_box ei_pe -submodules -both
+// 'ei_accumulator_fp16_LAT5_CW3' in Golden is set as a noblack box.
+// 'ei_activation_lut_INIT_FILE472h2f686f6d652f7332333532303936365f736f6e6e6d2f5448414e484c452f50452f52544c2f6c75742f74616e685f667031365f313032342e686578' in Golden is set as a noblack box.
+// 'ei_activation_lut_INIT_FILE496h2f686f6d652f7332333532303936365f736f6e6e6d2f5448414e484c452f50452f52544c2f6c75742f736f66746d61785f667031365f313032342e686578' in Golden is set as a noblack box.
+// 'ei_activation_selector' in Golden is set as a noblack box.
+// 'ei_adder22' in Golden is set as a noblack box.
+// 'ei_adder22_0' in Golden is set as a noblack box.
+// 'ei_adder22_0_0' in Golden is set as a noblack box.
+// 'ei_adder22_0_1' in Golden is set as a noblack box.
+// 'ei_adder22_0_2' in Golden is set as a noblack box.
+// 'ei_adder22_0_3' in Golden is set as a noblack box.
+// 'ei_adder22_0_4' in Golden is set as a noblack box.
+// 'ei_adder22_0_5' in Golden is set as a noblack box.
+// 'ei_adder22_0_6' in Golden is set as a noblack box.
+// 'ei_adder22_0_7' in Golden is set as a noblack box.
+// 'ei_adder22_0_8' in Golden is set as a noblack box.
+// 'ei_adder22_1' in Golden is set as a noblack box.
+// 'ei_adder22_10' in Golden is set as a noblack box.
+// 'ei_adder22_11' in Golden is set as a noblack box.
+// 'ei_adder22_12' in Golden is set as a noblack box.
+// 'ei_adder22_13' in Golden is set as a noblack box.
+// 'ei_adder22_14' in Golden is set as a noblack box.
+// 'ei_adder22_15' in Golden is set as a noblack box.
+// 'ei_adder22_16' in Golden is set as a noblack box.
+// 'ei_adder22_17' in Golden is set as a noblack box.
+// 'ei_adder22_1_0' in Golden is set as a noblack box.
+// 'ei_adder22_1_1' in Golden is set as a noblack box.
+// 'ei_adder22_1_2' in Golden is set as a noblack box.
+// 'ei_adder22_1_3' in Golden is set as a noblack box.
+// 'ei_adder22_1_4' in Golden is set as a noblack box.
+// 'ei_adder22_1_5' in Golden is set as a noblack box.
+// 'ei_adder22_1_6' in Golden is set as a noblack box.
+// 'ei_adder22_1_7' in Golden is set as a noblack box.
+// 'ei_adder22_1_8' in Golden is set as a noblack box.
+// 'ei_adder22_2' in Golden is set as a noblack box.
+// 'ei_adder22_2_0' in Golden is set as a noblack box.
+// 'ei_adder22_2_1' in Golden is set as a noblack box.
+// 'ei_adder22_2_2' in Golden is set as a noblack box.
+// 'ei_adder22_2_3' in Golden is set as a noblack box.
+// 'ei_adder22_2_4' in Golden is set as a noblack box.
+// 'ei_adder22_2_5' in Golden is set as a noblack box.
+// 'ei_adder22_2_6' in Golden is set as a noblack box.
+// 'ei_adder22_2_7' in Golden is set as a noblack box.
+// 'ei_adder22_2_8' in Golden is set as a noblack box.
+// 'ei_adder22_3' in Golden is set as a noblack box.
+// 'ei_adder22_3_0' in Golden is set as a noblack box.
+// 'ei_adder22_3_1' in Golden is set as a noblack box.
+// 'ei_adder22_3_2' in Golden is set as a noblack box.
+// 'ei_adder22_3_3' in Golden is set as a noblack box.
+// 'ei_adder22_3_4' in Golden is set as a noblack box.
+// 'ei_adder22_3_5' in Golden is set as a noblack box.
+// 'ei_adder22_3_6' in Golden is set as a noblack box.
+// 'ei_adder22_3_7' in Golden is set as a noblack box.
+// 'ei_adder22_3_8' in Golden is set as a noblack box.
+// 'ei_adder22_4' in Golden is set as a noblack box.
+// 'ei_adder22_4_0' in Golden is set as a noblack box.
+// 'ei_adder22_4_1' in Golden is set as a noblack box.
+// 'ei_adder22_4_2' in Golden is set as a noblack box.
+// 'ei_adder22_4_3' in Golden is set as a noblack box.
+// 'ei_adder22_4_4' in Golden is set as a noblack box.
+// 'ei_adder22_4_5' in Golden is set as a noblack box.
+// 'ei_adder22_4_6' in Golden is set as a noblack box.
+// 'ei_adder22_4_7' in Golden is set as a noblack box.
+// 'ei_adder22_4_8' in Golden is set as a noblack box.
+// 'ei_adder22_5' in Golden is set as a noblack box.
+// 'ei_adder22_5_0' in Golden is set as a noblack box.
+// 'ei_adder22_5_1' in Golden is set as a noblack box.
+// 'ei_adder22_5_2' in Golden is set as a noblack box.
+// 'ei_adder22_5_3' in Golden is set as a noblack box.
+// 'ei_adder22_5_4' in Golden is set as a noblack box.
+// 'ei_adder22_5_5' in Golden is set as a noblack box.
+// 'ei_adder22_5_6' in Golden is set as a noblack box.
+// 'ei_adder22_5_7' in Golden is set as a noblack box.
+// 'ei_adder22_5_8' in Golden is set as a noblack box.
+// 'ei_adder22_6' in Golden is set as a noblack box.
+// 'ei_adder22_6_0' in Golden is set as a noblack box.
+// 'ei_adder22_6_1' in Golden is set as a noblack box.
+// 'ei_adder22_6_2' in Golden is set as a noblack box.
+// 'ei_adder22_6_3' in Golden is set as a noblack box.
+// 'ei_adder22_6_4' in Golden is set as a noblack box.
+// 'ei_adder22_6_5' in Golden is set as a noblack box.
+// 'ei_adder22_6_6' in Golden is set as a noblack box.
+// 'ei_adder22_6_7' in Golden is set as a noblack box.
+// 'ei_adder22_6_8' in Golden is set as a noblack box.
+// 'ei_adder22_7' in Golden is set as a noblack box.
+// 'ei_adder22_7_0' in Golden is set as a noblack box.
+// 'ei_adder22_7_1' in Golden is set as a noblack box.
+// 'ei_adder22_7_2' in Golden is set as a noblack box.
+// 'ei_adder22_7_3' in Golden is set as a noblack box.
+// 'ei_adder22_7_4' in Golden is set as a noblack box.
+// 'ei_adder22_7_5' in Golden is set as a noblack box.
+// 'ei_adder22_7_6' in Golden is set as a noblack box.
+// 'ei_adder22_7_7' in Golden is set as a noblack box.
+// 'ei_adder22_7_8' in Golden is set as a noblack box.
+// 'ei_adder22_8' in Golden is set as a noblack box.
+// 'ei_adder22_8_0' in Golden is set as a noblack box.
+// 'ei_adder22_8_1' in Golden is set as a noblack box.
+// 'ei_adder22_8_2' in Golden is set as a noblack box.
+// 'ei_adder22_8_3' in Golden is set as a noblack box.
+// 'ei_adder22_8_4' in Golden is set as a noblack box.
+// 'ei_adder22_8_5' in Golden is set as a noblack box.
+// 'ei_adder22_8_6' in Golden is set as a noblack box.
+// 'ei_adder22_8_7' in Golden is set as a noblack box.
+// 'ei_adder22_8_8' in Golden is set as a noblack box.
+// 'ei_adder22_9' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH11' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH11_0' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH11_1' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH11_10' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH11_11' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH11_12' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH11_13' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH11_14' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH11_15' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH11_16' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH11_2' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH11_3' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH11_4' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH11_5' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH11_6' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH11_7' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH11_8' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH11_9' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH15' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH15_0' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH15_1' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH15_10' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH15_11' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH15_12' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH15_13' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH15_14' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH15_15' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH15_16' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH15_2' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH15_3' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH15_4' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH15_5' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH15_6' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH15_7' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH15_8' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH15_9' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH3' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_0' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_0_0' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_0_1' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_0_10' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_0_11' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_0_12' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_0_13' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_0_14' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_0_15' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_0_16' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_0_2' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_0_3' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_0_4' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_0_5' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_0_6' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_0_7' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_0_8' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_0_9' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_1' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_10' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_11' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_12' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_13' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_14' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_15' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_16' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_17' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_18' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_1_0' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_1_1' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_1_10' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_1_11' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_1_12' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_1_13' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_1_14' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_1_15' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_1_16' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_1_2' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_1_3' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_1_4' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_1_5' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_1_6' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_1_7' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_1_8' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_1_9' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_2' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_3' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_4' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_5' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_6' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_7' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_8' in Golden is set as a noblack box.
+// 'ei_adderN_WIDTH6_9' in Golden is set as a noblack box.
+// 'ei_adder_fp16' in Golden is set as a noblack box.
+// 'ei_adder_fp16_0' in Golden is set as a noblack box.
+// 'ei_adder_fp16_1' in Golden is set as a noblack box.
+// 'ei_adder_fp16_10' in Golden is set as a noblack box.
+// 'ei_adder_fp16_11' in Golden is set as a noblack box.
+// 'ei_adder_fp16_2' in Golden is set as a noblack box.
+// 'ei_adder_fp16_3' in Golden is set as a noblack box.
+// 'ei_adder_fp16_4' in Golden is set as a noblack box.
+// 'ei_adder_fp16_471' in Golden is set as a noblack box.
+// 'ei_adder_fp16_481' in Golden is set as a noblack box.
+// 'ei_adder_fp16_482' in Golden is set as a noblack box.
+// 'ei_adder_fp16_483' in Golden is set as a noblack box.
+// 'ei_adder_fp16_484' in Golden is set as a noblack box.
+// 'ei_adder_fp16_5' in Golden is set as a noblack box.
+// 'ei_adder_fp16_6' in Golden is set as a noblack box.
+// 'ei_adder_fp16_7' in Golden is set as a noblack box.
+// 'ei_adder_fp16_8' in Golden is set as a noblack box.
+// 'ei_adder_fp16_9' in Golden is set as a noblack box.
+// 'ei_counter_WIDTH3' in Golden is set as a noblack box.
+// 'ei_fp16_2num_comparator' in Golden is set as a noblack box.
+// 'ei_fp16_2num_comparator_0' in Golden is set as a noblack box.
+// 'ei_fp16_2num_comparator_1' in Golden is set as a noblack box.
+// 'ei_fp16_2num_comparator_2' in Golden is set as a noblack box.
+// 'ei_fp16_2num_comparator_488' in Golden is set as a noblack box.
+// 'ei_fp16_2num_comparator_489' in Golden is set as a noblack box.
+// 'ei_fp16_2num_comparator_490' in Golden is set as a noblack box.
+// 'ei_fp16_2num_comparator_491' in Golden is set as a noblack box.
+// 'ei_fp16_2num_comparator_492' in Golden is set as a noblack box.
+// 'ei_fp16_2num_comparator_493' in Golden is set as a noblack box.
+// 'ei_fp16_2num_comparator_494' in Golden is set as a noblack box.
+// 'ei_fp16_is_inf' in Golden is set as a noblack box.
+// 'ei_fp16_is_nan' in Golden is set as a noblack box.
+// 'ei_fp16_is_zero' in Golden is set as a noblack box.
+// 'ei_fp16_maxpooling_WIDTH16' in Golden is set as a noblack box.
+// 'ei_full_adder' in Golden is set as a noblack box.
+// 'ei_lzcN_WIDTH14' in Golden is set as a noblack box.
+// 'ei_multiplier' in Golden is set as a noblack box.
+// 'ei_multiplier_0' in Golden is set as a noblack box.
+// 'ei_multiplier_1' in Golden is set as a noblack box.
+// 'ei_multiplier_17460' in Golden is set as a noblack box.
+// 'ei_multiplier_17461' in Golden is set as a noblack box.
+// 'ei_multiplier_2' in Golden is set as a noblack box.
+// 'ei_multiplier_3' in Golden is set as a noblack box.
+// 'ei_multiplier_4' in Golden is set as a noblack box.
+// 'ei_multiplier_5' in Golden is set as a noblack box.
+// 'ei_multiplier_6' in Golden is set as a noblack box.
+// 'ei_multiplier_fp16' in Golden is set as a noblack box.
+// 'ei_multiplier_fp16_0' in Golden is set as a noblack box.
+// 'ei_multiplier_fp16_1' in Golden is set as a noblack box.
+// 'ei_multiplier_fp16_2' in Golden is set as a noblack box.
+// 'ei_multiplier_fp16_3' in Golden is set as a noblack box.
+// 'ei_multiplier_fp16_4' in Golden is set as a noblack box.
+// 'ei_multiplier_fp16_5' in Golden is set as a noblack box.
+// 'ei_multiplier_fp16_6' in Golden is set as a noblack box.
+// 'ei_multiplier_fp16_7' in Golden is set as a noblack box.
+// 'ei_multiplier_fp16_8' in Golden is set as a noblack box.
+// 'ei_mux16' in Golden is set as a noblack box.
+// 'ei_mux16_0' in Golden is set as a noblack box.
+// 'ei_mux16_0_0' in Golden is set as a noblack box.
+// 'ei_mux16_0_1' in Golden is set as a noblack box.
+// 'ei_mux16_0_10' in Golden is set as a noblack box.
+// 'ei_mux16_0_11' in Golden is set as a noblack box.
+// 'ei_mux16_0_12' in Golden is set as a noblack box.
+// 'ei_mux16_0_13' in Golden is set as a noblack box.
+// 'ei_mux16_0_14' in Golden is set as a noblack box.
+// 'ei_mux16_0_15' in Golden is set as a noblack box.
+// 'ei_mux16_0_16' in Golden is set as a noblack box.
+// 'ei_mux16_0_2' in Golden is set as a noblack box.
+// 'ei_mux16_0_3' in Golden is set as a noblack box.
+// 'ei_mux16_0_4' in Golden is set as a noblack box.
+// 'ei_mux16_0_5' in Golden is set as a noblack box.
+// 'ei_mux16_0_6' in Golden is set as a noblack box.
+// 'ei_mux16_0_7' in Golden is set as a noblack box.
+// 'ei_mux16_0_8' in Golden is set as a noblack box.
+// 'ei_mux16_0_9' in Golden is set as a noblack box.
+// 'ei_mux16_1' in Golden is set as a noblack box.
+// 'ei_mux16_10' in Golden is set as a noblack box.
+// 'ei_mux16_11' in Golden is set as a noblack box.
+// 'ei_mux16_12' in Golden is set as a noblack box.
+// 'ei_mux16_13' in Golden is set as a noblack box.
+// 'ei_mux16_14' in Golden is set as a noblack box.
+// 'ei_mux16_15' in Golden is set as a noblack box.
+// 'ei_mux16_16' in Golden is set as a noblack box.
+// 'ei_mux16_17' in Golden is set as a noblack box.
+// 'ei_mux16_18' in Golden is set as a noblack box.
+// 'ei_mux16_19' in Golden is set as a noblack box.
+// 'ei_mux16_1_0' in Golden is set as a noblack box.
+// 'ei_mux16_1_1' in Golden is set as a noblack box.
+// 'ei_mux16_1_10' in Golden is set as a noblack box.
+// 'ei_mux16_1_11' in Golden is set as a noblack box.
+// 'ei_mux16_1_12' in Golden is set as a noblack box.
+// 'ei_mux16_1_13' in Golden is set as a noblack box.
+// 'ei_mux16_1_14' in Golden is set as a noblack box.
+// 'ei_mux16_1_15' in Golden is set as a noblack box.
+// 'ei_mux16_1_16' in Golden is set as a noblack box.
+// 'ei_mux16_1_2' in Golden is set as a noblack box.
+// 'ei_mux16_1_3' in Golden is set as a noblack box.
+// 'ei_mux16_1_4' in Golden is set as a noblack box.
+// 'ei_mux16_1_5' in Golden is set as a noblack box.
+// 'ei_mux16_1_6' in Golden is set as a noblack box.
+// 'ei_mux16_1_7' in Golden is set as a noblack box.
+// 'ei_mux16_1_8' in Golden is set as a noblack box.
+// 'ei_mux16_1_9' in Golden is set as a noblack box.
+// 'ei_mux16_2' in Golden is set as a noblack box.
+// 'ei_mux16_2_0' in Golden is set as a noblack box.
+// 'ei_mux16_2_1' in Golden is set as a noblack box.
+// 'ei_mux16_2_10' in Golden is set as a noblack box.
+// 'ei_mux16_2_11' in Golden is set as a noblack box.
+// 'ei_mux16_2_12' in Golden is set as a noblack box.
+// 'ei_mux16_2_13' in Golden is set as a noblack box.
+// 'ei_mux16_2_14' in Golden is set as a noblack box.
+// 'ei_mux16_2_15' in Golden is set as a noblack box.
+// 'ei_mux16_2_16' in Golden is set as a noblack box.
+// 'ei_mux16_2_2' in Golden is set as a noblack box.
+// 'ei_mux16_2_3' in Golden is set as a noblack box.
+// 'ei_mux16_2_4' in Golden is set as a noblack box.
+// 'ei_mux16_2_5' in Golden is set as a noblack box.
+// 'ei_mux16_2_6' in Golden is set as a noblack box.
+// 'ei_mux16_2_7' in Golden is set as a noblack box.
+// 'ei_mux16_2_8' in Golden is set as a noblack box.
+// 'ei_mux16_2_9' in Golden is set as a noblack box.
+// 'ei_mux16_3' in Golden is set as a noblack box.
+// 'ei_mux16_4' in Golden is set as a noblack box.
+// 'ei_mux16_5' in Golden is set as a noblack box.
+// 'ei_mux16_6' in Golden is set as a noblack box.
+// 'ei_mux16_7' in Golden is set as a noblack box.
+// 'ei_mux16_8' in Golden is set as a noblack box.
+// 'ei_mux16_9' in Golden is set as a noblack box.
+// 'ei_mux2' in Golden is set as a noblack box.
+// 'ei_mux22' in Golden is set as a noblack box.
+// 'ei_mux22_0' in Golden is set as a noblack box.
+// 'ei_mux22_0_0' in Golden is set as a noblack box.
+// 'ei_mux22_0_1' in Golden is set as a noblack box.
+// 'ei_mux22_0_2' in Golden is set as a noblack box.
+// 'ei_mux22_0_3' in Golden is set as a noblack box.
+// 'ei_mux22_0_4' in Golden is set as a noblack box.
+// 'ei_mux22_0_5' in Golden is set as a noblack box.
+// 'ei_mux22_0_6' in Golden is set as a noblack box.
+// 'ei_mux22_0_7' in Golden is set as a noblack box.
+// 'ei_mux22_0_8' in Golden is set as a noblack box.
+// 'ei_mux22_1' in Golden is set as a noblack box.
+// 'ei_mux22_10' in Golden is set as a noblack box.
+// 'ei_mux22_11' in Golden is set as a noblack box.
+// 'ei_mux22_12' in Golden is set as a noblack box.
+// 'ei_mux22_13' in Golden is set as a noblack box.
+// 'ei_mux22_14' in Golden is set as a noblack box.
+// 'ei_mux22_15' in Golden is set as a noblack box.
+// 'ei_mux22_16' in Golden is set as a noblack box.
+// 'ei_mux22_17' in Golden is set as a noblack box.
+// 'ei_mux22_18' in Golden is set as a noblack box.
+// 'ei_mux22_1_0' in Golden is set as a noblack box.
+// 'ei_mux22_1_1' in Golden is set as a noblack box.
+// 'ei_mux22_1_2' in Golden is set as a noblack box.
+// 'ei_mux22_1_3' in Golden is set as a noblack box.
+// 'ei_mux22_1_4' in Golden is set as a noblack box.
+// 'ei_mux22_1_5' in Golden is set as a noblack box.
+// 'ei_mux22_1_6' in Golden is set as a noblack box.
+// 'ei_mux22_1_7' in Golden is set as a noblack box.
+// 'ei_mux22_1_8' in Golden is set as a noblack box.
+// 'ei_mux22_2' in Golden is set as a noblack box.
+// 'ei_mux22_2_0' in Golden is set as a noblack box.
+// 'ei_mux22_2_1' in Golden is set as a noblack box.
+// 'ei_mux22_2_2' in Golden is set as a noblack box.
+// 'ei_mux22_2_3' in Golden is set as a noblack box.
+// 'ei_mux22_2_4' in Golden is set as a noblack box.
+// 'ei_mux22_2_5' in Golden is set as a noblack box.
+// 'ei_mux22_2_6' in Golden is set as a noblack box.
+// 'ei_mux22_2_7' in Golden is set as a noblack box.
+// 'ei_mux22_2_8' in Golden is set as a noblack box.
+// 'ei_mux22_3' in Golden is set as a noblack box.
+// 'ei_mux22_3_0' in Golden is set as a noblack box.
+// 'ei_mux22_3_1' in Golden is set as a noblack box.
+// 'ei_mux22_3_2' in Golden is set as a noblack box.
+// 'ei_mux22_3_3' in Golden is set as a noblack box.
+// 'ei_mux22_3_4' in Golden is set as a noblack box.
+// 'ei_mux22_3_5' in Golden is set as a noblack box.
+// 'ei_mux22_3_6' in Golden is set as a noblack box.
+// 'ei_mux22_3_7' in Golden is set as a noblack box.
+// 'ei_mux22_3_8' in Golden is set as a noblack box.
+// 'ei_mux22_4' in Golden is set as a noblack box.
+// 'ei_mux22_4_0' in Golden is set as a noblack box.
+// 'ei_mux22_4_1' in Golden is set as a noblack box.
+// 'ei_mux22_4_2' in Golden is set as a noblack box.
+// 'ei_mux22_4_3' in Golden is set as a noblack box.
+// 'ei_mux22_4_4' in Golden is set as a noblack box.
+// 'ei_mux22_4_5' in Golden is set as a noblack box.
+// 'ei_mux22_4_6' in Golden is set as a noblack box.
+// 'ei_mux22_4_7' in Golden is set as a noblack box.
+// 'ei_mux22_4_8' in Golden is set as a noblack box.
+// 'ei_mux22_5' in Golden is set as a noblack box.
+// 'ei_mux22_5_0' in Golden is set as a noblack box.
+// 'ei_mux22_5_1' in Golden is set as a noblack box.
+// 'ei_mux22_5_2' in Golden is set as a noblack box.
+// 'ei_mux22_5_3' in Golden is set as a noblack box.
+// 'ei_mux22_5_4' in Golden is set as a noblack box.
+// 'ei_mux22_5_5' in Golden is set as a noblack box.
+// 'ei_mux22_5_6' in Golden is set as a noblack box.
+// 'ei_mux22_5_7' in Golden is set as a noblack box.
+// 'ei_mux22_5_8' in Golden is set as a noblack box.
+// 'ei_mux22_6' in Golden is set as a noblack box.
+// 'ei_mux22_6_0' in Golden is set as a noblack box.
+// 'ei_mux22_6_1' in Golden is set as a noblack box.
+// 'ei_mux22_6_2' in Golden is set as a noblack box.
+// 'ei_mux22_6_3' in Golden is set as a noblack box.
+// 'ei_mux22_6_4' in Golden is set as a noblack box.
+// 'ei_mux22_6_5' in Golden is set as a noblack box.
+// 'ei_mux22_6_6' in Golden is set as a noblack box.
+// 'ei_mux22_6_7' in Golden is set as a noblack box.
+// 'ei_mux22_6_8' in Golden is set as a noblack box.
+// 'ei_mux22_7' in Golden is set as a noblack box.
+// 'ei_mux22_7_0' in Golden is set as a noblack box.
+// 'ei_mux22_7_1' in Golden is set as a noblack box.
+// 'ei_mux22_7_2' in Golden is set as a noblack box.
+// 'ei_mux22_7_3' in Golden is set as a noblack box.
+// 'ei_mux22_7_4' in Golden is set as a noblack box.
+// 'ei_mux22_7_5' in Golden is set as a noblack box.
+// 'ei_mux22_7_6' in Golden is set as a noblack box.
+// 'ei_mux22_7_7' in Golden is set as a noblack box.
+// 'ei_mux22_7_8' in Golden is set as a noblack box.
+// 'ei_mux22_8' in Golden is set as a noblack box.
+// 'ei_mux22_8_0' in Golden is set as a noblack box.
+// 'ei_mux22_8_1' in Golden is set as a noblack box.
+// 'ei_mux22_8_2' in Golden is set as a noblack box.
+// 'ei_mux22_8_3' in Golden is set as a noblack box.
+// 'ei_mux22_8_4' in Golden is set as a noblack box.
+// 'ei_mux22_8_5' in Golden is set as a noblack box.
+// 'ei_mux22_8_6' in Golden is set as a noblack box.
+// 'ei_mux22_8_7' in Golden is set as a noblack box.
+// 'ei_mux22_8_8' in Golden is set as a noblack box.
+// 'ei_mux22_9' in Golden is set as a noblack box.
+// 'ei_mux22_9_0' in Golden is set as a noblack box.
+// 'ei_mux22_9_1' in Golden is set as a noblack box.
+// 'ei_mux22_9_2' in Golden is set as a noblack box.
+// 'ei_mux22_9_3' in Golden is set as a noblack box.
+// 'ei_mux22_9_4' in Golden is set as a noblack box.
+// 'ei_mux22_9_5' in Golden is set as a noblack box.
+// 'ei_mux22_9_6' in Golden is set as a noblack box.
+// 'ei_mux22_9_7' in Golden is set as a noblack box.
+// 'ei_mux22_9_8' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_0' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_0_0' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_0_1' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_0_10' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_0_11' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_0_12' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_0_13' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_0_14' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_0_15' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_0_16' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_0_2' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_0_3' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_0_4' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_0_5' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_0_6' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_0_7' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_0_8' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_0_9' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_1' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_10' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_11' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_12' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_13' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_14' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_15' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_16' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_17' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_18' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_19' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_1_0' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_1_1' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_1_10' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_1_11' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_1_12' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_1_13' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_1_14' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_1_15' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_1_16' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_1_2' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_1_3' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_1_4' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_1_5' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_1_6' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_1_7' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_1_8' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_1_9' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_2' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_2_0' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_2_1' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_2_10' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_2_11' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_2_12' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_2_13' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_2_14' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_2_15' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_2_16' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_2_2' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_2_3' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_2_4' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_2_5' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_2_6' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_2_7' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_2_8' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_2_9' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_3' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_4' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_5' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_6' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_7' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_8' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH11_9' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_0' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_0_0' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_0_1' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_0_10' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_0_11' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_0_12' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_0_13' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_0_14' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_0_15' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_0_16' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_0_2' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_0_3' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_0_4' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_0_5' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_0_6' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_0_7' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_0_8' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_0_9' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_1' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_10' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_11' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_12' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_13' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_14' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_15' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_16' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_17' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_2' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_3' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_4' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_5' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_6' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_7' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_8' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH14_9' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH16' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH16_0' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH16_1' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH16_2' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH16_3' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH16_4' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH16_5' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH16_6' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH16_7' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH3' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_0' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_0_0' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_0_1' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_0_10' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_0_11' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_0_12' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_0_13' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_0_14' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_0_15' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_0_16' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_0_2' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_0_3' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_0_4' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_0_5' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_0_6' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_0_7' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_0_8' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_0_9' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_1' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_10' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_11' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_12' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_13' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_14' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_15' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_16' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_17' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_18' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_19' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_1_0' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_1_1' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_1_10' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_1_11' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_1_12' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_1_13' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_1_14' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_1_15' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_1_16' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_1_2' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_1_3' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_1_4' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_1_5' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_1_6' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_1_7' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_1_8' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_1_9' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_2' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_2_0' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_2_1' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_2_10' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_2_11' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_2_12' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_2_13' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_2_14' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_2_15' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_2_16' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_2_2' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_2_3' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_2_4' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_2_5' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_2_6' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_2_7' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_2_8' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_2_9' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_3' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_4' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_5' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_6' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_7' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_8' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH5_9' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH6' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH6_0' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH6_1' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH6_10' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH6_11' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH6_12' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH6_13' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH6_14' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH6_15' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH6_16' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH6_2' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH6_3' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH6_4' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH6_5' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH6_6' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH6_7' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH6_8' in Golden is set as a noblack box.
+// 'ei_muxN_WIDTH6_9' in Golden is set as a noblack box.
+// 'ei_pe_muxpool_LATENCY_MUL4_LAT_TREE16_LAT_TOTAL20' in Golden is set as a noblack box.
+// 'ei_residual_connector_VALID_LAT4' in Golden is set as a noblack box.
+// 'ei_shift_buffer_WIDTH18_DEPTH8' in Golden is set as a noblack box.
+// 'ei_shift_left_SHIFT0' in Golden is set as a noblack box.
+// 'ei_shift_left_SHIFT1' in Golden is set as a noblack box.
+// 'ei_shift_left_SHIFT10' in Golden is set as a noblack box.
+// 'ei_shift_left_SHIFT2' in Golden is set as a noblack box.
+// 'ei_shift_left_SHIFT3' in Golden is set as a noblack box.
+// 'ei_shift_left_SHIFT4' in Golden is set as a noblack box.
+// 'ei_shift_left_SHIFT5' in Golden is set as a noblack box.
+// 'ei_shift_left_SHIFT6' in Golden is set as a noblack box.
+// 'ei_shift_left_SHIFT7' in Golden is set as a noblack box.
+// 'ei_shift_left_SHIFT8' in Golden is set as a noblack box.
+// 'ei_shift_left_SHIFT9' in Golden is set as a noblack box.
+// 'ei_shr_varN_sticky_WIDTH14_SHAMT_W6' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH11' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH11_0' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH11_1' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH11_10' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH11_11' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH11_12' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH11_13' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH11_14' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH11_15' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH11_16' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH11_2' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH11_3' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH11_4' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH11_5' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH11_6' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH11_7' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH11_8' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH11_9' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH15' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH15_0' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH15_1' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH15_10' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH15_11' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH15_12' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH15_13' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH15_14' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH15_15' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH15_16' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH15_2' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH15_3' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH15_4' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH15_5' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH15_6' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH15_7' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH15_8' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH15_9' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_0' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_0_0' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_0_1' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_0_10' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_0_11' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_0_12' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_0_13' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_0_14' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_0_15' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_0_16' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_0_2' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_0_3' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_0_4' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_0_5' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_0_6' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_0_7' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_0_8' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_0_9' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_1' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_10' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_11' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_12' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_13' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_14' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_15' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_16' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_17' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_18' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_19' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_1_0' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_1_1' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_1_10' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_1_11' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_1_12' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_1_13' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_1_14' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_1_15' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_1_16' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_1_2' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_1_3' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_1_4' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_1_5' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_1_6' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_1_7' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_1_8' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_1_9' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_2' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_20' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_2_0' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_2_1' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_2_10' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_2_11' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_2_12' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_2_13' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_2_14' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_2_15' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_2_16' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_2_2' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_2_3' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_2_4' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_2_5' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_2_6' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_2_7' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_2_8' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_2_9' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_3' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_3_0' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_3_1' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_3_10' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_3_11' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_3_12' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_3_13' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_3_14' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_3_15' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_3_16' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_3_2' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_3_3' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_3_4' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_3_5' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_3_6' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_3_7' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_3_8' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_3_9' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_4' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_5' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_6' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_7' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_8' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH6_9' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH7' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH7_0' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH7_1' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH7_2' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH7_3' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH7_4' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH7_5' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH7_6' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH7_7' in Golden is set as a noblack box.
+// 'ei_subtractorN_WIDTH7_8' in Golden is set as a noblack box.
+// 'ei_tree_adder' in Golden is set as a noblack box.
+// 'regN_WIDTH1' in Golden is set as a noblack box.
+// 'regN_WIDTH11' in Golden is set as a noblack box.
+// 'regN_WIDTH16' in Golden is set as a noblack box.
+// 'regN_WIDTH2' in Golden is set as a noblack box.
+// 'regN_WIDTH22' in Golden is set as a noblack box.
+// 'regN_WIDTH3' in Golden is set as a noblack box.
+// 'regN_WIDTH57' in Golden is set as a noblack box.
+// 'regN_WIDTH70' in Golden is set as a noblack box.
+// 'ei_adder_fp16_471' in Revised is set as a noblack box.
+// 'ei_adder_fp16_481' in Revised is set as a noblack box.
+// 'ei_adder_fp16_482' in Revised is set as a noblack box.
+// 'ei_adder_fp16_483' in Revised is set as a noblack box.
+// 'ei_adder_fp16_484' in Revised is set as a noblack box.
+// 'ei_fp16_2num_comparator' in Revised is set as a noblack box.
+// 'ei_fp16_2num_comparator_488' in Revised is set as a noblack box.
+// 'ei_fp16_2num_comparator_489' in Revised is set as a noblack box.
+// 'ei_fp16_2num_comparator_490' in Revised is set as a noblack box.
+// 'ei_fp16_2num_comparator_491' in Revised is set as a noblack box.
+// 'ei_fp16_2num_comparator_492' in Revised is set as a noblack box.
+// 'ei_fp16_2num_comparator_493' in Revised is set as a noblack box.
+// 'ei_fp16_2num_comparator_494' in Revised is set as a noblack box.
+// 'ei_multiplier_17460' in Revised is set as a noblack box.
+// 'ei_multiplier_17461' in Revised is set as a noblack box.
+// 'retiming_state_point' in Revised is set as a noblack box.
+0
+// Command: set_retiming_option -auto -retimed_module
+// Command: set_retiming_option -auto -retimed_module
+0
+CPU time     : 4.78    seconds
+Elapse time  : 17      seconds
+Memory usage : 371.92  M bytes
+// Command: set lec_version_required "20.10100"
+20.10100
+// Command: if {$lec_version >= $lec_version_required} {
+//              check_verification_information
+//          }
+// Command: check_verification_information
+Checking Sequential constant...
+Checking Sequential merge...
+Checking Synthesis equation...
+================================================================================
+Implementation Information Check Summary: 
+--------------------------------------------------------------------------------
+Total Sequential Constants:     1441
+  Name Collision:               0
+  Name Ambiguous:               0
+  Name not Found:               0
+--------------------------------------------------------------------------------
+Total Sequential Merges:        0
+  Name Collision:               0
+  Name Ambiguous:               0
+  Name not Found:               0
+  Merge Target:
+    Name Ambiguous:             0
+    Name not Found:             0
+--------------------------------------------------------------------------------
+Total Synthesis Equations:      0
+  Module not Found:             0
+  Equation Conflict:            0
+  Equation Syntax Error:        0
+No Equation Modules:            0
+================================================================================
+0
+CPU time     : 5.19    seconds
+Elapse time  : 22      seconds
+Memory usage : 376.05  M bytes
+// Command: set_analyze_option -auto -report_map
+// Command: set_analyze_option -auto -report_map
+0
+// Command: write_hier_compare_dofile hier_tmp1.lec.do -verbose -noexact_pin_match -constraint -usage \
+//          -replace -balanced_extraction -input_output_pin_equivalence \
+//          -prepend_string "report_design_data; report_unmapped_points -summary; report_unmapped_points -notmapped; analyze_datapath -module -verbose; eval analyze_datapath $DATAPATH_SOLVER_OPTION -verbose"
+// Command: write_hier_compare_dofile hier_tmp1.lec.do -verbose -noexact_pin_match -constraint -usage -replace -balanced_extraction -input_output_pin_equivalence -prepend_string {report_design_data; report_unmapped_points -summary; report_unmapped_points -notmapped; analyze_datapath -module -verbose; eval analyze_datapath -flowgraph -verbose}
+// The following settings are used for hierarchical dofile generation:
+// Modeling Options:
+    Auto setup disabled
+    GATED_Clock modeling enabled
+// Mapping Method:
+    Name Only
+// Retiming Option:
+    NOAuto
+--------------------------------------------------------------------------------
+// Flattening Golden and Revised designs ...
+--------------------------------------------------------------------------------
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// Balanced modeling mapped 2206 out of 12895 DFF/DLATs
+// Collected 1441 sequential constant(s) via setup info for Golden
+// (F18) Converted 1441 DFF/DLAT(s) in (G) to ZERO/ONE
+// Warning: Undriven signals are tied to ZERO
+// (F65.1) Tied 32768 undriven signal(s) to ZERO
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 7454
+// Revised key points = 6465
+// Warning: Automatic key point mapping is skipped
+// Command: MAP KEy Points
+// Mapping key points ...
+// Warning: More than 1/3 of the key points have mis-matched names
+// Warning: Please use renaming rules if automatic mapping fails to finish
+// Warning: Golden has 4398 unmapped key points
+// Warning: Revised has 4850 unmapped key points
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            331    181    1103      1615    
+--------------------------------------------------------------------------------
+Revised           331    181    1103      1615    
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       1441      1441    
+Not-mapped        4398      4398    
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Not-mapped        4850      4850    
+================================================================================
+// Warning: Key point mapping is incomplete
+CPU time     : 12.65   seconds
+Elapse time  : 30      seconds
+Memory usage : 475.90  M bytes
+--------------------------------------------------------------------------------
+// Starting hierarchical dofile generation ...
+--------------------------------------------------------------------------------
+// Total Matching Module Instance Pairs =  1
+// Module Instantiation Ratio in Golden = 1.00
+// Module Instantiation Ratio in Revised = 1.00
+// Gathering Instance Boundary Information ...
+// Extracting Constraints in Golden ...
+// Extracting Constraints in Revised ...
+// Extracting logic-cone properties of pins ...
+// Balancing Constraints ...
+// boundary_change values use the revised names to match.
+// Resolving Constraints ...
+// Writing hierarchical dofile ...
+# The following modules are not written because they have been added as noblack box:
+# ei_pe_muxpool_LATENCY_MUL4_LAT_TREE16_LAT_TOTAL20 (G)
+# ei_multiplier_fp16 (G)
+# ei_fp16_is_nan (G)
+# ei_fp16_is_zero (G)
+# ei_fp16_is_inf (G)
+# ei_multiplier (G)
+# regN_WIDTH11 (G)
+# ei_shift_left_SHIFT0 (G)
+# ei_shift_left_SHIFT1 (G)
+# ei_shift_left_SHIFT2 (G)
+# ei_shift_left_SHIFT3 (G)
+# ei_shift_left_SHIFT4 (G)
+# ei_shift_left_SHIFT5 (G)
+# ei_shift_left_SHIFT6 (G)
+# ei_shift_left_SHIFT7 (G)
+# ei_shift_left_SHIFT8 (G)
+# ei_shift_left_SHIFT9 (G)
+# ei_shift_left_SHIFT10 (G)
+# ei_mux22 (G)
+# ei_mux2 (G)
+# ei_mux22_0 (G)
+# ei_mux22_1 (G)
+# ei_mux22_2 (G)
+# ei_mux22_3 (G)
+# ei_mux22_4 (G)
+# ei_mux22_5 (G)
+# ei_mux22_6 (G)
+# ei_mux22_7 (G)
+# ei_mux22_8 (G)
+# ei_mux22_9 (G)
+# ei_adder22 (G)
+# ei_full_adder (G)
+# ei_adder22_0 (G)
+# ei_adder22_1 (G)
+# ei_adder22_2 (G)
+# ei_adder22_3 (G)
+# ei_adder22_4 (G)
+# ei_adder22_5 (G)
+# ei_adder22_6 (G)
+# regN_WIDTH22 (G)
+# ei_adder22_7 (G)
+# ei_adder22_8 (G)
+# ei_subtractorN_WIDTH7 (G)
+# regN_WIDTH16 (G)
+# ei_multiplier_fp16_0 (G)
+# ei_multiplier_0 (G)
+# ei_mux22_10 (G)
+# ei_mux22_0_0 (G)
+# ei_mux22_1_0 (G)
+# ei_mux22_2_0 (G)
+# ei_mux22_3_0 (G)
+# ei_mux22_4_0 (G)
+# ei_mux22_5_0 (G)
+# ei_mux22_6_0 (G)
+# ei_mux22_7_0 (G)
+# ei_mux22_8_0 (G)
+# ei_mux22_9_0 (G)
+# ei_adder22_9 (G)
+# ei_adder22_0_0 (G)
+# ei_adder22_1_0 (G)
+# ei_adder22_2_0 (G)
+# ei_adder22_3_0 (G)
+# ei_adder22_4_0 (G)
+# ei_adder22_5_0 (G)
+# ei_adder22_6_0 (G)
+# ei_adder22_7_0 (G)
+# ei_adder22_8_0 (G)
+# ei_subtractorN_WIDTH7_0 (G)
+# ei_multiplier_fp16_1 (G)
+# ei_multiplier_1 (G)
+# ei_mux22_11 (G)
+# ei_mux22_0_1 (G)
+# ei_mux22_1_1 (G)
+# ei_mux22_2_1 (G)
+# ei_mux22_3_1 (G)
+# ei_mux22_4_1 (G)
+# ei_mux22_5_1 (G)
+# ei_mux22_6_1 (G)
+# ei_mux22_7_1 (G)
+# ei_mux22_8_1 (G)
+# ei_mux22_9_1 (G)
+# ei_adder22_10 (G)
+# ei_adder22_0_1 (G)
+# ei_adder22_1_1 (G)
+# ei_adder22_2_1 (G)
+# ei_adder22_3_1 (G)
+# ei_adder22_4_1 (G)
+# ei_adder22_5_1 (G)
+# ei_adder22_6_1 (G)
+# ei_adder22_7_1 (G)
+# ei_adder22_8_1 (G)
+# ei_subtractorN_WIDTH7_1 (G)
+# ei_multiplier_fp16_2 (G)
+# ei_multiplier_2 (G)
+# ei_mux22_12 (G)
+# ei_mux22_0_2 (G)
+# ei_mux22_1_2 (G)
+# ei_mux22_2_2 (G)
+# ei_mux22_3_2 (G)
+# ei_mux22_4_2 (G)
+# ei_mux22_5_2 (G)
+# ei_mux22_6_2 (G)
+# ei_mux22_7_2 (G)
+# ei_mux22_8_2 (G)
+# ei_mux22_9_2 (G)
+# ei_adder22_11 (G)
+# ei_adder22_0_2 (G)
+# ei_adder22_1_2 (G)
+# ei_adder22_2_2 (G)
+# ei_adder22_3_2 (G)
+# ei_adder22_4_2 (G)
+# ei_adder22_5_2 (G)
+# ei_adder22_6_2 (G)
+# ei_adder22_7_2 (G)
+# ei_adder22_8_2 (G)
+# ei_subtractorN_WIDTH7_2 (G)
+# ei_multiplier_fp16_3 (G)
+# ei_multiplier_3 (G)
+# ei_mux22_13 (G)
+# ei_mux22_0_3 (G)
+# ei_mux22_1_3 (G)
+# ei_mux22_2_3 (G)
+# ei_mux22_3_3 (G)
+# ei_mux22_4_3 (G)
+# ei_mux22_5_3 (G)
+# ei_mux22_6_3 (G)
+# ei_mux22_7_3 (G)
+# ei_mux22_8_3 (G)
+# ei_mux22_9_3 (G)
+# ei_adder22_12 (G)
+# ei_adder22_0_3 (G)
+# ei_adder22_1_3 (G)
+# ei_adder22_2_3 (G)
+# ei_adder22_3_3 (G)
+# ei_adder22_4_3 (G)
+# ei_adder22_5_3 (G)
+# ei_adder22_6_3 (G)
+# ei_adder22_7_3 (G)
+# ei_adder22_8_3 (G)
+# ei_subtractorN_WIDTH7_3 (G)
+# ei_multiplier_fp16_4 (G)
+# ei_multiplier_4 (G)
+# ei_mux22_14 (G)
+# ei_mux22_0_4 (G)
+# ei_mux22_1_4 (G)
+# ei_mux22_2_4 (G)
+# ei_mux22_3_4 (G)
+# ei_mux22_4_4 (G)
+# ei_mux22_5_4 (G)
+# ei_mux22_6_4 (G)
+# ei_mux22_7_4 (G)
+# ei_mux22_8_4 (G)
+# ei_mux22_9_4 (G)
+# ei_adder22_13 (G)
+# ei_adder22_0_4 (G)
+# ei_adder22_1_4 (G)
+# ei_adder22_2_4 (G)
+# ei_adder22_3_4 (G)
+# ei_adder22_4_4 (G)
+# ei_adder22_5_4 (G)
+# ei_adder22_6_4 (G)
+# ei_adder22_7_4 (G)
+# ei_adder22_8_4 (G)
+# ei_subtractorN_WIDTH7_4 (G)
+# ei_multiplier_fp16_5 (G)
+# ei_multiplier_5 (G)
+# ei_mux22_15 (G)
+# ei_mux22_0_5 (G)
+# ei_mux22_1_5 (G)
+# ei_mux22_2_5 (G)
+# ei_mux22_3_5 (G)
+# ei_mux22_4_5 (G)
+# ei_mux22_5_5 (G)
+# ei_mux22_6_5 (G)
+# ei_mux22_7_5 (G)
+# ei_mux22_8_5 (G)
+# ei_mux22_9_5 (G)
+# ei_adder22_14 (G)
+# ei_adder22_0_5 (G)
+# ei_adder22_1_5 (G)
+# ei_adder22_2_5 (G)
+# ei_adder22_3_5 (G)
+# ei_adder22_4_5 (G)
+# ei_adder22_5_5 (G)
+# ei_adder22_6_5 (G)
+# ei_adder22_7_5 (G)
+# ei_adder22_8_5 (G)
+# ei_subtractorN_WIDTH7_5 (G)
+# ei_multiplier_fp16_6 (G)
+# ei_multiplier_6 (G)
+# ei_mux22_16 (G)
+# ei_mux22_0_6 (G)
+# ei_mux22_1_6 (G)
+# ei_mux22_2_6 (G)
+# ei_mux22_3_6 (G)
+# ei_mux22_4_6 (G)
+# ei_mux22_5_6 (G)
+# ei_mux22_6_6 (G)
+# ei_mux22_7_6 (G)
+# ei_mux22_8_6 (G)
+# ei_mux22_9_6 (G)
+# ei_adder22_15 (G)
+# ei_adder22_0_6 (G)
+# ei_adder22_1_6 (G)
+# ei_adder22_2_6 (G)
+# ei_adder22_3_6 (G)
+# ei_adder22_4_6 (G)
+# ei_adder22_5_6 (G)
+# ei_adder22_6_6 (G)
+# ei_adder22_7_6 (G)
+# ei_adder22_8_6 (G)
+# ei_subtractorN_WIDTH7_6 (G)
+# ei_multiplier_fp16_7 (G)
+# ei_multiplier_17461 (G)
+# ei_mux22_17 (G)
+# ei_mux22_0_7 (G)
+# ei_mux22_1_7 (G)
+# ei_mux22_2_7 (G)
+# ei_mux22_3_7 (G)
+# ei_mux22_4_7 (G)
+# ei_mux22_5_7 (G)
+# ei_mux22_6_7 (G)
+# ei_mux22_7_7 (G)
+# ei_mux22_8_7 (G)
+# ei_mux22_9_7 (G)
+# ei_adder22_16 (G)
+# ei_adder22_0_7 (G)
+# ei_adder22_1_7 (G)
+# ei_adder22_2_7 (G)
+# ei_adder22_3_7 (G)
+# ei_adder22_4_7 (G)
+# ei_adder22_5_7 (G)
+# ei_adder22_6_7 (G)
+# ei_adder22_7_7 (G)
+# ei_adder22_8_7 (G)
+# ei_subtractorN_WIDTH7_7 (G)
+# ei_muxN_WIDTH16 (G)
+# ei_muxN_WIDTH16_0 (G)
+# ei_muxN_WIDTH16_1 (G)
+# ei_muxN_WIDTH16_2 (G)
+# ei_muxN_WIDTH16_3 (G)
+# ei_muxN_WIDTH16_4 (G)
+# ei_muxN_WIDTH16_5 (G)
+# ei_muxN_WIDTH16_6 (G)
+# ei_muxN_WIDTH16_7 (G)
+# ei_tree_adder (G)
+# ei_adder_fp16 (G)
+# ei_mux16 (G)
+# ei_muxN_WIDTH5 (G)
+# ei_muxN_WIDTH5_0 (G)
+# ei_muxN_WIDTH11 (G)
+# ei_muxN_WIDTH11_0 (G)
+# ei_subtractorN_WIDTH6 (G)
+# ei_subtractorN_WIDTH6_0 (G)
+# ei_subtractorN_WIDTH11 (G)
+# ei_muxN_WIDTH5_1 (G)
+# ei_muxN_WIDTH5_2 (G)
+# ei_muxN_WIDTH11_1 (G)
+# ei_muxN_WIDTH11_2 (G)
+# regN_WIDTH70 (G)
+# ei_subtractorN_WIDTH6_1 (G)
+# ei_shr_varN_sticky_WIDTH14_SHAMT_W6 (G)
+# ei_adderN_WIDTH15 (G)
+# ei_subtractorN_WIDTH15 (G)
+# ei_muxN_WIDTH14 (G)
+# ei_adderN_WIDTH6 (G)
+# ei_lzcN_WIDTH14 (G)
+# ei_subtractorN_WIDTH6_2 (G)
+# ei_subtractorN_WIDTH6_3 (G)
+# ei_muxN_WIDTH14_0 (G)
+# ei_muxN_WIDTH6 (G)
+# ei_adderN_WIDTH6_0 (G)
+# regN_WIDTH57 (G)
+# ei_adderN_WIDTH11 (G)
+# ei_adderN_WIDTH6_1 (G)
+# ei_mux16_0 (G)
+# ei_mux16_1 (G)
+# ei_mux16_2 (G)
+# ei_adder_fp16_0 (G)
+# ei_mux16_3 (G)
+# ei_muxN_WIDTH5_3 (G)
+# ei_muxN_WIDTH5_0_0 (G)
+# ei_muxN_WIDTH11_3 (G)
+# ei_muxN_WIDTH11_0_0 (G)
+# ei_subtractorN_WIDTH6_4 (G)
+# ei_subtractorN_WIDTH6_0_0 (G)
+# ei_subtractorN_WIDTH11_0 (G)
+# ei_muxN_WIDTH5_1_0 (G)
+# ei_muxN_WIDTH5_2_0 (G)
+# ei_muxN_WIDTH11_1_0 (G)
+# ei_muxN_WIDTH11_2_0 (G)
+# ei_subtractorN_WIDTH6_1_0 (G)
+# ei_adderN_WIDTH15_0 (G)
+# ei_subtractorN_WIDTH15_0 (G)
+# ei_muxN_WIDTH14_1 (G)
+# ei_adderN_WIDTH6_2 (G)
+# ei_subtractorN_WIDTH6_2_0 (G)
+# ei_subtractorN_WIDTH6_3_0 (G)
+# ei_muxN_WIDTH14_0_0 (G)
+# ei_muxN_WIDTH6_0 (G)
+# ei_adderN_WIDTH6_0_0 (G)
+# ei_adderN_WIDTH11_0 (G)
+# ei_adderN_WIDTH6_1_0 (G)
+# ei_mux16_0_0 (G)
+# ei_mux16_1_0 (G)
+# ei_mux16_2_0 (G)
+# ei_adder_fp16_1 (G)
+# ei_mux16_4 (G)
+# ei_muxN_WIDTH5_4 (G)
+# ei_muxN_WIDTH5_0_1 (G)
+# ei_muxN_WIDTH11_4 (G)
+# ei_muxN_WIDTH11_0_1 (G)
+# ei_subtractorN_WIDTH6_5 (G)
+# ei_subtractorN_WIDTH6_0_1 (G)
+# ei_subtractorN_WIDTH11_1 (G)
+# ei_muxN_WIDTH5_1_1 (G)
+# ei_muxN_WIDTH5_2_1 (G)
+# ei_muxN_WIDTH11_1_1 (G)
+# ei_muxN_WIDTH11_2_1 (G)
+# ei_subtractorN_WIDTH6_1_1 (G)
+# ei_adderN_WIDTH15_1 (G)
+# ei_subtractorN_WIDTH15_1 (G)
+# ei_muxN_WIDTH14_2 (G)
+# ei_adderN_WIDTH6_3 (G)
+# ei_subtractorN_WIDTH6_2_1 (G)
+# ei_subtractorN_WIDTH6_3_1 (G)
+# ei_muxN_WIDTH14_0_1 (G)
+# ei_muxN_WIDTH6_1 (G)
+# ei_adderN_WIDTH6_0_1 (G)
+# ei_adderN_WIDTH11_1 (G)
+# ei_adderN_WIDTH6_1_1 (G)
+# ei_mux16_0_1 (G)
+# ei_mux16_1_1 (G)
+# ei_mux16_2_1 (G)
+# ei_adder_fp16_2 (G)
+# ei_mux16_5 (G)
+# ei_muxN_WIDTH5_5 (G)
+# ei_muxN_WIDTH5_0_2 (G)
+# ei_muxN_WIDTH11_5 (G)
+# ei_muxN_WIDTH11_0_2 (G)
+# ei_subtractorN_WIDTH6_6 (G)
+# ei_subtractorN_WIDTH6_0_2 (G)
+# ei_subtractorN_WIDTH11_2 (G)
+# ei_muxN_WIDTH5_1_2 (G)
+# ei_muxN_WIDTH5_2_2 (G)
+# ei_muxN_WIDTH11_1_2 (G)
+# ei_muxN_WIDTH11_2_2 (G)
+# ei_subtractorN_WIDTH6_1_2 (G)
+# ei_adderN_WIDTH15_2 (G)
+# ei_subtractorN_WIDTH15_2 (G)
+# ei_muxN_WIDTH14_3 (G)
+# ei_adderN_WIDTH6_4 (G)
+# ei_subtractorN_WIDTH6_2_2 (G)
+# ei_subtractorN_WIDTH6_3_2 (G)
+# ei_muxN_WIDTH14_0_2 (G)
+# ei_muxN_WIDTH6_2 (G)
+# ei_adderN_WIDTH6_0_2 (G)
+# ei_adderN_WIDTH11_2 (G)
+# ei_adderN_WIDTH6_1_2 (G)
+# ei_mux16_0_2 (G)
+# ei_mux16_1_2 (G)
+# ei_mux16_2_2 (G)
+# ei_adder_fp16_484 (G)
+# ei_mux16_6 (G)
+# ei_muxN_WIDTH5_6 (G)
+# ei_muxN_WIDTH5_0_3 (G)
+# ei_muxN_WIDTH11_6 (G)
+# ei_muxN_WIDTH11_0_3 (G)
+# ei_subtractorN_WIDTH6_7 (G)
+# ei_subtractorN_WIDTH6_0_3 (G)
+# ei_subtractorN_WIDTH11_3 (G)
+# ei_muxN_WIDTH5_1_3 (G)
+# ei_muxN_WIDTH5_2_3 (G)
+# ei_muxN_WIDTH11_1_3 (G)
+# ei_muxN_WIDTH11_2_3 (G)
+# ei_subtractorN_WIDTH6_1_3 (G)
+# ei_adderN_WIDTH15_3 (G)
+# ei_subtractorN_WIDTH15_3 (G)
+# ei_muxN_WIDTH14_4 (G)
+# ei_adderN_WIDTH6_5 (G)
+# ei_subtractorN_WIDTH6_2_3 (G)
+# ei_subtractorN_WIDTH6_3_3 (G)
+# ei_muxN_WIDTH14_0_3 (G)
+# ei_muxN_WIDTH6_3 (G)
+# ei_adderN_WIDTH6_0_3 (G)
+# ei_adderN_WIDTH11_3 (G)
+# ei_adderN_WIDTH6_1_3 (G)
+# ei_mux16_0_3 (G)
+# ei_mux16_1_3 (G)
+# ei_mux16_2_3 (G)
+# ei_adder_fp16_483 (G)
+# ei_mux16_7 (G)
+# ei_muxN_WIDTH5_7 (G)
+# ei_muxN_WIDTH5_0_4 (G)
+# ei_muxN_WIDTH11_7 (G)
+# ei_muxN_WIDTH11_0_4 (G)
+# ei_subtractorN_WIDTH6_8 (G)
+# ei_subtractorN_WIDTH6_0_4 (G)
+# ei_subtractorN_WIDTH11_4 (G)
+# ei_muxN_WIDTH5_1_4 (G)
+# ei_muxN_WIDTH5_2_4 (G)
+# ei_muxN_WIDTH11_1_4 (G)
+# ei_muxN_WIDTH11_2_4 (G)
+# ei_subtractorN_WIDTH6_1_4 (G)
+# ei_adderN_WIDTH15_4 (G)
+# ei_subtractorN_WIDTH15_4 (G)
+# ei_muxN_WIDTH14_5 (G)
+# ei_adderN_WIDTH6_6 (G)
+# ei_subtractorN_WIDTH6_2_4 (G)
+# ei_subtractorN_WIDTH6_3_4 (G)
+# ei_muxN_WIDTH14_0_4 (G)
+# ei_muxN_WIDTH6_4 (G)
+# ei_adderN_WIDTH6_0_4 (G)
+# ei_adderN_WIDTH11_4 (G)
+# ei_adderN_WIDTH6_1_4 (G)
+# ei_mux16_0_4 (G)
+# ei_mux16_1_4 (G)
+# ei_mux16_2_4 (G)
+# ei_adder_fp16_482 (G)
+# ei_mux16_8 (G)
+# ei_muxN_WIDTH5_8 (G)
+# ei_muxN_WIDTH5_0_5 (G)
+# ei_muxN_WIDTH11_8 (G)
+# ei_muxN_WIDTH11_0_5 (G)
+# ei_subtractorN_WIDTH6_9 (G)
+# ei_subtractorN_WIDTH6_0_5 (G)
+# ei_subtractorN_WIDTH11_5 (G)
+# ei_muxN_WIDTH5_1_5 (G)
+# ei_muxN_WIDTH5_2_5 (G)
+# ei_muxN_WIDTH11_1_5 (G)
+# ei_muxN_WIDTH11_2_5 (G)
+# ei_subtractorN_WIDTH6_1_5 (G)
+# ei_adderN_WIDTH15_5 (G)
+# ei_subtractorN_WIDTH15_5 (G)
+# ei_muxN_WIDTH14_6 (G)
+# ei_adderN_WIDTH6_7 (G)
+# ei_subtractorN_WIDTH6_2_5 (G)
+# ei_subtractorN_WIDTH6_3_5 (G)
+# ei_muxN_WIDTH14_0_5 (G)
+# ei_muxN_WIDTH6_5 (G)
+# ei_adderN_WIDTH6_0_5 (G)
+# ei_adderN_WIDTH11_5 (G)
+# ei_adderN_WIDTH6_1_5 (G)
+# ei_mux16_0_5 (G)
+# ei_mux16_1_5 (G)
+# ei_mux16_2_5 (G)
+# ei_adder_fp16_481 (G)
+# ei_mux16_9 (G)
+# ei_muxN_WIDTH5_9 (G)
+# ei_muxN_WIDTH5_0_6 (G)
+# ei_muxN_WIDTH11_9 (G)
+# ei_muxN_WIDTH11_0_6 (G)
+# ei_subtractorN_WIDTH6_10 (G)
+# ei_subtractorN_WIDTH6_0_6 (G)
+# ei_subtractorN_WIDTH11_6 (G)
+# ei_muxN_WIDTH5_1_6 (G)
+# ei_muxN_WIDTH5_2_6 (G)
+# ei_muxN_WIDTH11_1_6 (G)
+# ei_muxN_WIDTH11_2_6 (G)
+# ei_subtractorN_WIDTH6_1_6 (G)
+# ei_adderN_WIDTH15_6 (G)
+# ei_subtractorN_WIDTH15_6 (G)
+# ei_muxN_WIDTH14_7 (G)
+# ei_adderN_WIDTH6_8 (G)
+# ei_subtractorN_WIDTH6_2_6 (G)
+# ei_subtractorN_WIDTH6_3_6 (G)
+# ei_muxN_WIDTH14_0_6 (G)
+# ei_muxN_WIDTH6_6 (G)
+# ei_adderN_WIDTH6_0_6 (G)
+# ei_adderN_WIDTH11_6 (G)
+# ei_adderN_WIDTH6_1_6 (G)
+# ei_mux16_0_6 (G)
+# ei_mux16_1_6 (G)
+# ei_mux16_2_6 (G)
+# ei_fp16_maxpooling_WIDTH16 (G)
+# ei_fp16_2num_comparator (G)
+# ei_fp16_2num_comparator_494 (G)
+# ei_fp16_2num_comparator_493 (G)
+# ei_fp16_2num_comparator_492 (G)
+# ei_fp16_2num_comparator_491 (G)
+# ei_fp16_2num_comparator_490 (G)
+# ei_fp16_2num_comparator_489 (G)
+# ei_fp16_2num_comparator_488 (G)
+# ei_multiplier_fp16_8 (G)
+# ei_multiplier_17460 (G)
+# ei_mux22_18 (G)
+# ei_mux22_0_8 (G)
+# ei_mux22_1_8 (G)
+# ei_mux22_2_8 (G)
+# ei_mux22_3_8 (G)
+# ei_mux22_4_8 (G)
+# ei_mux22_5_8 (G)
+# ei_mux22_6_8 (G)
+# ei_mux22_7_8 (G)
+# ei_mux22_8_8 (G)
+# ei_mux22_9_8 (G)
+# ei_adder22_17 (G)
+# ei_adder22_0_8 (G)
+# ei_adder22_1_8 (G)
+# ei_adder22_2_8 (G)
+# ei_adder22_3_8 (G)
+# ei_adder22_4_8 (G)
+# ei_adder22_5_8 (G)
+# ei_adder22_6_8 (G)
+# ei_adder22_7_8 (G)
+# ei_adder22_8_8 (G)
+# ei_subtractorN_WIDTH7_8 (G)
+# regN_WIDTH1 (G)
+# regN_WIDTH2 (G)
+# ei_residual_connector_VALID_LAT4 (G)
+# ei_adder_fp16_3 (G)
+# ei_mux16_10 (G)
+# ei_muxN_WIDTH5_10 (G)
+# ei_muxN_WIDTH5_0_7 (G)
+# ei_muxN_WIDTH11_10 (G)
+# ei_muxN_WIDTH11_0_7 (G)
+# ei_subtractorN_WIDTH6_11 (G)
+# ei_subtractorN_WIDTH6_0_7 (G)
+# ei_subtractorN_WIDTH11_7 (G)
+# ei_muxN_WIDTH5_1_7 (G)
+# ei_muxN_WIDTH5_2_7 (G)
+# ei_muxN_WIDTH11_1_7 (G)
+# ei_muxN_WIDTH11_2_7 (G)
+# ei_subtractorN_WIDTH6_1_7 (G)
+# ei_adderN_WIDTH15_7 (G)
+# ei_subtractorN_WIDTH15_7 (G)
+# ei_muxN_WIDTH14_8 (G)
+# ei_adderN_WIDTH6_9 (G)
+# ei_subtractorN_WIDTH6_2_7 (G)
+# ei_subtractorN_WIDTH6_3_7 (G)
+# ei_muxN_WIDTH14_0_7 (G)
+# ei_muxN_WIDTH6_7 (G)
+# ei_adderN_WIDTH6_0_7 (G)
+# ei_adderN_WIDTH11_7 (G)
+# ei_adderN_WIDTH6_1_7 (G)
+# ei_mux16_0_7 (G)
+# ei_mux16_1_7 (G)
+# ei_mux16_2_7 (G)
+# ei_adder_fp16_4 (G)
+# ei_mux16_11 (G)
+# ei_muxN_WIDTH5_11 (G)
+# ei_muxN_WIDTH5_0_8 (G)
+# ei_muxN_WIDTH11_11 (G)
+# ei_muxN_WIDTH11_0_8 (G)
+# ei_subtractorN_WIDTH6_12 (G)
+# ei_subtractorN_WIDTH6_0_8 (G)
+# ei_subtractorN_WIDTH11_8 (G)
+# ei_muxN_WIDTH5_1_8 (G)
+# ei_muxN_WIDTH5_2_8 (G)
+# ei_muxN_WIDTH11_1_8 (G)
+# ei_muxN_WIDTH11_2_8 (G)
+# ei_subtractorN_WIDTH6_1_8 (G)
+# ei_adderN_WIDTH15_8 (G)
+# ei_subtractorN_WIDTH15_8 (G)
+# ei_muxN_WIDTH14_9 (G)
+# ei_adderN_WIDTH6_10 (G)
+# ei_subtractorN_WIDTH6_2_8 (G)
+# ei_subtractorN_WIDTH6_3_8 (G)
+# ei_muxN_WIDTH14_0_8 (G)
+# ei_muxN_WIDTH6_8 (G)
+# ei_adderN_WIDTH6_0_8 (G)
+# ei_adderN_WIDTH11_8 (G)
+# ei_adderN_WIDTH6_1_8 (G)
+# ei_mux16_0_8 (G)
+# ei_mux16_1_8 (G)
+# ei_mux16_2_8 (G)
+# ei_adder_fp16_5 (G)
+# ei_mux16_12 (G)
+# ei_muxN_WIDTH5_12 (G)
+# ei_muxN_WIDTH5_0_9 (G)
+# ei_muxN_WIDTH11_12 (G)
+# ei_muxN_WIDTH11_0_9 (G)
+# ei_subtractorN_WIDTH6_13 (G)
+# ei_subtractorN_WIDTH6_0_9 (G)
+# ei_subtractorN_WIDTH11_9 (G)
+# ei_muxN_WIDTH5_1_9 (G)
+# ei_muxN_WIDTH5_2_9 (G)
+# ei_muxN_WIDTH11_1_9 (G)
+# ei_muxN_WIDTH11_2_9 (G)
+# ei_subtractorN_WIDTH6_1_9 (G)
+# ei_adderN_WIDTH15_9 (G)
+# ei_subtractorN_WIDTH15_9 (G)
+# ei_muxN_WIDTH14_10 (G)
+# ei_adderN_WIDTH6_11 (G)
+# ei_subtractorN_WIDTH6_2_9 (G)
+# ei_subtractorN_WIDTH6_3_9 (G)
+# ei_muxN_WIDTH14_0_9 (G)
+# ei_muxN_WIDTH6_9 (G)
+# ei_adderN_WIDTH6_0_9 (G)
+# ei_adderN_WIDTH11_9 (G)
+# ei_adderN_WIDTH6_1_9 (G)
+# ei_mux16_0_9 (G)
+# ei_mux16_1_9 (G)
+# ei_mux16_2_9 (G)
+# ei_adder_fp16_6 (G)
+# ei_mux16_13 (G)
+# ei_muxN_WIDTH5_13 (G)
+# ei_muxN_WIDTH5_0_10 (G)
+# ei_muxN_WIDTH11_13 (G)
+# ei_muxN_WIDTH11_0_10 (G)
+# ei_subtractorN_WIDTH6_14 (G)
+# ei_subtractorN_WIDTH6_0_10 (G)
+# ei_subtractorN_WIDTH11_10 (G)
+# ei_muxN_WIDTH5_1_10 (G)
+# ei_muxN_WIDTH5_2_10 (G)
+# ei_muxN_WIDTH11_1_10 (G)
+# ei_muxN_WIDTH11_2_10 (G)
+# ei_subtractorN_WIDTH6_1_10 (G)
+# ei_adderN_WIDTH15_10 (G)
+# ei_subtractorN_WIDTH15_10 (G)
+# ei_muxN_WIDTH14_11 (G)
+# ei_adderN_WIDTH6_12 (G)
+# ei_subtractorN_WIDTH6_2_10 (G)
+# ei_subtractorN_WIDTH6_3_10 (G)
+# ei_muxN_WIDTH14_0_10 (G)
+# ei_muxN_WIDTH6_10 (G)
+# ei_adderN_WIDTH6_0_10 (G)
+# ei_adderN_WIDTH11_10 (G)
+# ei_adderN_WIDTH6_1_10 (G)
+# ei_mux16_0_10 (G)
+# ei_mux16_1_10 (G)
+# ei_mux16_2_10 (G)
+# ei_adder_fp16_7 (G)
+# ei_mux16_14 (G)
+# ei_muxN_WIDTH5_14 (G)
+# ei_muxN_WIDTH5_0_11 (G)
+# ei_muxN_WIDTH11_14 (G)
+# ei_muxN_WIDTH11_0_11 (G)
+# ei_subtractorN_WIDTH6_15 (G)
+# ei_subtractorN_WIDTH6_0_11 (G)
+# ei_subtractorN_WIDTH11_11 (G)
+# ei_muxN_WIDTH5_1_11 (G)
+# ei_muxN_WIDTH5_2_11 (G)
+# ei_muxN_WIDTH11_1_11 (G)
+# ei_muxN_WIDTH11_2_11 (G)
+# ei_subtractorN_WIDTH6_1_11 (G)
+# ei_adderN_WIDTH15_11 (G)
+# ei_subtractorN_WIDTH15_11 (G)
+# ei_muxN_WIDTH14_12 (G)
+# ei_adderN_WIDTH6_13 (G)
+# ei_subtractorN_WIDTH6_2_11 (G)
+# ei_subtractorN_WIDTH6_3_11 (G)
+# ei_muxN_WIDTH14_0_11 (G)
+# ei_muxN_WIDTH6_11 (G)
+# ei_adderN_WIDTH6_0_11 (G)
+# ei_adderN_WIDTH11_11 (G)
+# ei_adderN_WIDTH6_1_11 (G)
+# ei_mux16_0_11 (G)
+# ei_mux16_1_11 (G)
+# ei_mux16_2_11 (G)
+# ei_adder_fp16_8 (G)
+# ei_mux16_15 (G)
+# ei_muxN_WIDTH5_15 (G)
+# ei_muxN_WIDTH5_0_12 (G)
+# ei_muxN_WIDTH11_15 (G)
+# ei_muxN_WIDTH11_0_12 (G)
+# ei_subtractorN_WIDTH6_16 (G)
+# ei_subtractorN_WIDTH6_0_12 (G)
+# ei_subtractorN_WIDTH11_12 (G)
+# ei_muxN_WIDTH5_1_12 (G)
+# ei_muxN_WIDTH5_2_12 (G)
+# ei_muxN_WIDTH11_1_12 (G)
+# ei_muxN_WIDTH11_2_12 (G)
+# ei_subtractorN_WIDTH6_1_12 (G)
+# ei_adderN_WIDTH15_12 (G)
+# ei_subtractorN_WIDTH15_12 (G)
+# ei_muxN_WIDTH14_13 (G)
+# ei_adderN_WIDTH6_14 (G)
+# ei_subtractorN_WIDTH6_2_12 (G)
+# ei_subtractorN_WIDTH6_3_12 (G)
+# ei_muxN_WIDTH14_0_12 (G)
+# ei_muxN_WIDTH6_12 (G)
+# ei_adderN_WIDTH6_0_12 (G)
+# ei_adderN_WIDTH11_12 (G)
+# ei_adderN_WIDTH6_1_12 (G)
+# ei_mux16_0_12 (G)
+# ei_mux16_1_12 (G)
+# ei_mux16_2_12 (G)
+# ei_adder_fp16_9 (G)
+# ei_mux16_16 (G)
+# ei_muxN_WIDTH5_16 (G)
+# ei_muxN_WIDTH5_0_13 (G)
+# ei_muxN_WIDTH11_16 (G)
+# ei_muxN_WIDTH11_0_13 (G)
+# ei_subtractorN_WIDTH6_17 (G)
+# ei_subtractorN_WIDTH6_0_13 (G)
+# ei_subtractorN_WIDTH11_13 (G)
+# ei_muxN_WIDTH5_1_13 (G)
+# ei_muxN_WIDTH5_2_13 (G)
+# ei_muxN_WIDTH11_1_13 (G)
+# ei_muxN_WIDTH11_2_13 (G)
+# ei_subtractorN_WIDTH6_1_13 (G)
+# ei_adderN_WIDTH15_13 (G)
+# ei_subtractorN_WIDTH15_13 (G)
+# ei_muxN_WIDTH14_14 (G)
+# ei_adderN_WIDTH6_15 (G)
+# ei_subtractorN_WIDTH6_2_13 (G)
+# ei_subtractorN_WIDTH6_3_13 (G)
+# ei_muxN_WIDTH14_0_13 (G)
+# ei_muxN_WIDTH6_13 (G)
+# ei_adderN_WIDTH6_0_13 (G)
+# ei_adderN_WIDTH11_13 (G)
+# ei_adderN_WIDTH6_1_13 (G)
+# ei_mux16_0_13 (G)
+# ei_mux16_1_13 (G)
+# ei_mux16_2_13 (G)
+# ei_adder_fp16_10 (G)
+# ei_mux16_17 (G)
+# ei_muxN_WIDTH5_17 (G)
+# ei_muxN_WIDTH5_0_14 (G)
+# ei_muxN_WIDTH11_17 (G)
+# ei_muxN_WIDTH11_0_14 (G)
+# ei_subtractorN_WIDTH6_18 (G)
+# ei_subtractorN_WIDTH6_0_14 (G)
+# ei_subtractorN_WIDTH11_14 (G)
+# ei_muxN_WIDTH5_1_14 (G)
+# ei_muxN_WIDTH5_2_14 (G)
+# ei_muxN_WIDTH11_1_14 (G)
+# ei_muxN_WIDTH11_2_14 (G)
+# ei_subtractorN_WIDTH6_1_14 (G)
+# ei_adderN_WIDTH15_14 (G)
+# ei_subtractorN_WIDTH15_14 (G)
+# ei_muxN_WIDTH14_15 (G)
+# ei_adderN_WIDTH6_16 (G)
+# ei_subtractorN_WIDTH6_2_14 (G)
+# ei_subtractorN_WIDTH6_3_14 (G)
+# ei_muxN_WIDTH14_0_14 (G)
+# ei_muxN_WIDTH6_14 (G)
+# ei_adderN_WIDTH6_0_14 (G)
+# ei_adderN_WIDTH11_14 (G)
+# ei_adderN_WIDTH6_1_14 (G)
+# ei_mux16_0_14 (G)
+# ei_mux16_1_14 (G)
+# ei_mux16_2_14 (G)
+# ei_adder_fp16_11 (G)
+# ei_mux16_18 (G)
+# ei_muxN_WIDTH5_18 (G)
+# ei_muxN_WIDTH5_0_15 (G)
+# ei_muxN_WIDTH11_18 (G)
+# ei_muxN_WIDTH11_0_15 (G)
+# ei_subtractorN_WIDTH6_19 (G)
+# ei_subtractorN_WIDTH6_0_15 (G)
+# ei_subtractorN_WIDTH11_15 (G)
+# ei_muxN_WIDTH5_1_15 (G)
+# ei_muxN_WIDTH5_2_15 (G)
+# ei_muxN_WIDTH11_1_15 (G)
+# ei_muxN_WIDTH11_2_15 (G)
+# ei_subtractorN_WIDTH6_1_15 (G)
+# ei_adderN_WIDTH15_15 (G)
+# ei_subtractorN_WIDTH15_15 (G)
+# ei_muxN_WIDTH14_16 (G)
+# ei_adderN_WIDTH6_17 (G)
+# ei_subtractorN_WIDTH6_2_15 (G)
+# ei_subtractorN_WIDTH6_3_15 (G)
+# ei_muxN_WIDTH14_0_15 (G)
+# ei_muxN_WIDTH6_15 (G)
+# ei_adderN_WIDTH6_0_15 (G)
+# ei_adderN_WIDTH11_15 (G)
+# ei_adderN_WIDTH6_1_15 (G)
+# ei_mux16_0_15 (G)
+# ei_mux16_1_15 (G)
+# ei_mux16_2_15 (G)
+# ei_shift_buffer_WIDTH18_DEPTH8 (G)
+# ei_accumulator_fp16_LAT5_CW3 (G)
+# ei_counter_WIDTH3 (G)
+# ei_adderN_WIDTH3 (G)
+# ei_muxN_WIDTH3 (G)
+# regN_WIDTH3 (G)
+# ei_adder_fp16_471 (G)
+# ei_mux16_19 (G)
+# ei_muxN_WIDTH5_19 (G)
+# ei_muxN_WIDTH5_0_16 (G)
+# ei_muxN_WIDTH11_19 (G)
+# ei_muxN_WIDTH11_0_16 (G)
+# ei_subtractorN_WIDTH6_20 (G)
+# ei_subtractorN_WIDTH6_0_16 (G)
+# ei_subtractorN_WIDTH11_16 (G)
+# ei_muxN_WIDTH5_1_16 (G)
+# ei_muxN_WIDTH5_2_16 (G)
+# ei_muxN_WIDTH11_1_16 (G)
+# ei_muxN_WIDTH11_2_16 (G)
+# ei_subtractorN_WIDTH6_1_16 (G)
+# ei_adderN_WIDTH15_16 (G)
+# ei_subtractorN_WIDTH15_16 (G)
+# ei_muxN_WIDTH14_17 (G)
+# ei_adderN_WIDTH6_18 (G)
+# ei_subtractorN_WIDTH6_2_16 (G)
+# ei_subtractorN_WIDTH6_3_16 (G)
+# ei_muxN_WIDTH14_0_16 (G)
+# ei_muxN_WIDTH6_16 (G)
+# ei_adderN_WIDTH6_0_16 (G)
+# ei_adderN_WIDTH11_16 (G)
+# ei_adderN_WIDTH6_1_16 (G)
+# ei_mux16_0_16 (G)
+# ei_mux16_1_16 (G)
+# ei_mux16_2_16 (G)
+# ei_activation_selector (G)
+# ei_fp16_2num_comparator_0 (G)
+# ei_fp16_2num_comparator_1 (G)
+# ei_fp16_2num_comparator_2 (G)
+# ei_activation_lut_INIT_FILE496h2f686f6d652f7332333532303936365f736f6e6e6d2f5448414e484c452f50452f52544c2f6c75742f736f66746d61785f667031365f313032342e686578 (G)
+# ei_activation_lut_INIT_FILE472h2f686f6d652f7332333532303936365f736f6e6e6d2f5448414e484c452f50452f52544c2f6c75742f74616e685f667031365f313032342e686578 (G)
+# retiming_state_point (R)
+# ei_adder_fp16_471 (R)
+# ei_multiplier_17461 (R)
+# ei_multiplier_17460 (R)
+# ei_fp16_2num_comparator (R)
+# ei_fp16_2num_comparator_494 (R)
+# ei_fp16_2num_comparator_493 (R)
+# ei_fp16_2num_comparator_492 (R)
+# ei_fp16_2num_comparator_491 (R)
+# ei_fp16_2num_comparator_490 (R)
+# ei_fp16_2num_comparator_489 (R)
+# ei_fp16_2num_comparator_488 (R)
+# ei_adder_fp16_484 (R)
+# ei_adder_fp16_483 (R)
+# ei_adder_fp16_482 (R)
+# ei_adder_fp16_481 (R)
+818 modules are not written because they have been added as noblack box
+1 module pairs are written for hierarchical comparison
+// Command: report mapped point -summary -method
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            331    181    1103      1615    
+--------------------------------------------------------------------------------
+Revised           331    181    1103      1615    
+================================================================================
+================================================================================
+Mapping method    PI     PO     DFF    Total 
+--------------------------------------------------------------------------------
+Name              331    181    1103   1615  
+================================================================================
+CPU time     : 13.08   seconds
+Elapse time  : 32      seconds
+Memory usage : 476.45  M bytes
+// Command: report unmapped point -summary
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       1441      1441    
+Not-mapped        4398      4398    
+================================================================================
+Revised:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Not-mapped        4850      4850    
+================================================================================
+0
+// Command: run_hier_compare hier_tmp1.lec.do -dynamic_hierarchy
+// Command: run_hier_compare hier_tmp1.lec.do -dynamic_hierarchy
+// Running Module ei_pe and ei_pe
+// Command: set_root_module ei_pe -Golden
+// Warning: Golden root module is already at 'ei_pe'
+0
+// Command: set_root_module ei_pe -Revised
+// Warning: Revised root module is already at 'ei_pe'
+0
+// Command: set_module_property -instance / -Golden
+0
+// Command: set_module_property -instance / -Revised
+0
+// Command: report_black_box -NOHidden
+0
+// Command: set_system_mode lec
+// Processing Golden ...
+// Modeling Golden ...
+// Processing Revised ...
+// Modeling Revised ...
+// Balanced modeling mapped 2206 out of 12895 DFF/DLATs
+// Collected 1441 sequential constant(s) via setup info for Golden
+// (F18) Converted 1441 DFF/DLAT(s) in (G) to ZERO/ONE
+// Warning: Undriven signals are tied to ZERO
+// (F65.1) Tied 32768 undriven signal(s) to ZERO
+CPU time     : 17.72   seconds
+Elapse time  : 37      seconds
+Memory usage : 487.97  M bytes
+// Warning: Golden and Revised have different numbers of key points:
+// Golden  key points = 7454
+// Revised key points = 6465
+// Warning: Automatic key point mapping is skipped
+// General retiming ...
+// Warning: Please set_flatten_model -gated_clock before flattening to enable sequential gated clock remodeling in general retiming.
+// 4398 pairs of sequential correspondence are added
+================================================================================
+Golden registers:
+--------------------------------------------------------------------------------
+Mapped by name:           1103  
+Sequential corresponding: 4398  
+Unaccounted for:            1441  
+================================================================================
+// Retiming revised ...
+// Total number of forward retiming: 3575
+// Total number of backward retiming: 1581
+// Successfully retimed to 100% of the state points
+// (F25.1)  Move 4850 register(s) in (R) due to retiming
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            331    181    5501      6013    
+--------------------------------------------------------------------------------
+Revised           331    181    5501      6013    
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       1441      1441    
+================================================================================
+CPU time     : 33.36   seconds
+Elapse time  : 53      seconds
+Memory usage : 554.02  M bytes
+// Running automatic setup...
+================================================================================
+Mapped points: SYSTEM class
+--------------------------------------------------------------------------------
+Mapped points     PI     PO     DFF       Total   
+--------------------------------------------------------------------------------
+Golden            331    181    5501      6013    
+--------------------------------------------------------------------------------
+Revised           331    181    5501      6013    
+================================================================================
+Unmapped points:
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       1441      1441    
+================================================================================
+// Automatic setup finished.
+0
+CPU time     : 38.33   seconds
+Elapse time  : 58      seconds
+Memory usage : 554.40  M bytes
+// Command: report_design_data
+============================================
+Summary           Golden         Revised
+============================================
+Design-modules     10880            4414
+Library-cells       4103           40396
+============================================
+Primitives      Golden              Revised
+============================================
+INPUT              331                  331
+OUTPUT             181                  181
+--------------------------------------------
+AND        *     27695                16622
+BUF        *        56                  172
+DFF        *      6942                 5953
+INV        *      8177                19149
+MUX        *     55448                    0
+NAND       *        20                12171
+NOR        *       225                11896
+OR         *     16605                11304
+WIRE       *     16916                 4399
+XNOR       *       320                 1463
+XOR        *      8572                  784
+------ word-level --------------------------
+ADD        *        48                    0
+EQ         *         1                    0
+GE         *        47                    0
+GT         *        11                    0
+LE         *        21                    0
+LT         *       507                    0
+SLL        *        18                    0
+SRL        *        36                    0
+SUBTRACT   *         4                    0
+WINV       *       136                    0
+WMUX       *      3243                    0
+WSEL       *        31                    0
+--------------------------------------------
+Total           140976                83913
+
+// Command: report_unmapped_points -summary
+================================================================================
+Golden:
+--------------------------------------------------------------------------------
+Unmapped points   DFF       Total   
+--------------------------------------------------------------------------------
+Unreachable       1441      1441    
+================================================================================
+// Command: report_unmapped_points -notmapped
+
+0 unmapped points reported
+// Command: analyze_datapath -module -verbose
+// Note: Multithreaded module datapath analysis (MDP) is enabled
+// Analyzing modules in 'fv/ei_pe/fv_map.v.gz'
+// Command: analyze_datapath -flowgraph -verbose
+0
+CPU time     : 41.90   seconds
+Elapse time  : 63      seconds
+Memory usage : 573.38  M bytes
+// Command: add_compared_points -all
+// 5682 compared points added to compare list
+0
+// Command: compare   -threads 1,4
+================================================================================
+Compared points      PO     DFF       Total   
+--------------------------------------------------------------------------------
+Equivalent           181    5501      5682    
+================================================================================
+CPU time     : 55.05   seconds
+Elapse time  : 71      seconds
+Memory usage : 573.77  M bytes
+// Command: analyze abort -compare
+There is no abort/specified point to be analyzed.
+// Command: save_hier_compare_result
+0
+CPU time     : 55.64   seconds
+Elapse time  : 71      seconds
+Memory usage : 573.95  M bytes
+// Command: set_system_mode setup
+0
+// Command: usage
+CPU time     : 55.65   seconds
+Memory usage : 573.95  M bytes
+0
+Processed 1 out of 1 module pairs	EQ: 1	NEQ: 0	ABORT: 0
+
+================================================================================
+Module Comparison Results
+--------------------------------------------------------------------------------
+Equivalent                     1
+--------------------------------------------------------------------------------
+Total                          1/1
+--------------------------------------------------------------------------------
+Hierarchical compare : Equivalent 
+================================================================================
+0
+CPU time     : 55.84   seconds
+Elapse time  : 72      seconds
+Memory usage : 573.99  M bytes
+// Command: report_hier_compare_result -dynamicflattened
+// Command: report_hier_compare_result -dynamicflattened
+0
+// Command: report_verification -hier -verbose
+// Command: report_verification -hier -verbose
+================================================================================
+                            Verification Report
+--------------------------------------------------------------------------------
+Category                                                                  Count
+--------------------------------------------------------------------------------
+1. Non-standard modeling options used:                                      1
+     Tri-stated output:                                        checked
+     Revised X signals set to E:                               yes
+     Floating signals tied to Z:                               no *
+     Command "add clock" for clock-gating:                     not used
+--------------------------------------------------------------------------------
+2. Incomplete verification:                                                 0
+     All primary outputs are mapped:                           yes
+     Not-mapped DFF/DLAT is detected:                          no
+     All mapped points are added as compare points:            yes
+     All compared points are compared:                         yes
+     User added black box:                                     no
+     Black box mapped with different module name:              no
+     Empty module is not black boxed:                          no
+     Command "add ignore outputs" used:                        no
+     Always false constraints detected:                        no
+--------------------------------------------------------------------------------
+3. User modification to design:                                             0
+     Change gate type:                                         no
+     Change wire:                                              no
+     Primary input added by user:                              no
+--------------------------------------------------------------------------------
+4. Conformal Constraint Designer clock domain crossing checks recommended:  0
+     Multiple clocks in the design:                            no
+--------------------------------------------------------------------------------
+5. Design ambiguity:                                                        0
+     Duplicate module definition:                              no
+     Black box due to undefined cells:                         no
+     Golden design has abnormal ratio of unreachable gates:    no
+     Ratio of golden unreachable gates:                        3%
+     Revised design has abnormal ratio of unreachable gates:   no
+     Ratio of revised unreachable gates:                       0%
+     All primary input bus ordering is consistent:             yes
+     All primary output bus ordering is consistent:            yes
+     DFF/DLAT not compared due to disabled clock port(s):        0
+     Always X compared point is detected:                      not checked
+--------------------------------------------------------------------------------
+6. Compare Results:                                                        PASS
+     Number of EQ compare points:                              5682
+     Number of NON-EQ compare points:                          0
+     Number of Aborted compare points:                         0
+     Number of Uncompared compare points :                     0
+================================================================================
+pass
+// Command: write_verification_information
+// Command: write_verification_information
+// Verification information is written to rtl_fv_map_db.
+0
+CPU time     : 56.05   seconds
+Elapse time  : 72      seconds
+Memory usage : 574.04  M bytes
+// Command: report_verification_information
+// Command: report_verification_information
+// Generating reports on verification information at /home/s23520966_sonnm/THANHLE/PE/Synthesis/rtl_fv_map_db...
+LEC run scores:
+================================================================================
+Step                Score     Range          
+--------------------------------------------------------------------------------
+result_status       10        10             
+runtime             10        10             
+mapping             10        10             
+sequential_constant 10        10             
+sequential_merge    5         10             
+sequential_phase    10        10             
+datapath_analysis   5         10             
+combinational_loop  5         10             
+mismatch_detection  5         10             
+overall             70        90             
+================================================================================
+LEC results versus attributes:
+================================================================================
+Attribute           Total     Inconsistency  Combined Table                
+--------------------------------------------------------------------------------
+sequential_constant 1441      0              sequential_constant.json      
+sequential_merge    0         0                                            
+sequential_phase    5501      0              sequential_phase.json         
+================================================================================
+The tables can be viewed directly using web interface.
+// Done with reporting verification information.
+0
+CPU time     : 56.18   seconds
+Elapse time  : 75      seconds
+Memory usage : 574.05  M bytes
+// Command: set lec_version_required "18.20330"
+18.20330
+// Command: if {$lec_version >= $lec_version_required} {
+//              report_implementation_information
+//          }
+// Command: report_implementation_information
+// Reporting implementation information...
+// Information summary:
+================================================================================
+        Information Category     Total      Used    Unused  Rejected     Abort
+--------------------------------------------------------------------------------
+   Sequential instance phase      5953      1103      4850         0         0
+               Phase mapping         0         0         0         0         0
+         Sequential constant      1441      1441         0         0         0
+            Sequential merge         0         0         0         0         0
+      Sequential unreachable         0         0         0         0         0
+      Sequential duplication         0         0         0         0         0
+       Boundary optimization         0         0         0         0         0
+          Synthesis equation         0         0         0         0         0
+  Combinational loop breaker         0         0         0         0         0
+================================================================================
+0
+// Command: set_system_mode lec
+// Command: set_system_mode lec
+0
+// Command: puts "No of compare points = [get_compare_points -count]"
+// Command: get_compare_points -count
+No of compare points = 5682
+// Command: puts "No of diff points    = [get_compare_points -NONequivalent -count]"
+// Command: get_compare_points -NONequivalent -count
+No of diff points    = 0
+// Command: puts "No of abort points   = [get_compare_points -abort -count]"
+// Command: get_compare_points -abort -count
+No of abort points   = 0
+// Command: puts "No of unknown points = [get_compare_points -unknown -count]"
+// Command: get_compare_points -unknown -count
+No of unknown points = 0
+// Command: if {[get_compare_points -count] == 0} {
+//              puts "---------------------------------"
+//              puts "ERROR: No compare points detected"
+//              puts "---------------------------------"
+//          }
+// Command: get_compare_points -count
+// Command: if {[get_compare_points -NONequivalent -count] > 0} {
+//              puts "------------------------------------"
+//              puts "ERROR: Different Key Points detected"
+//              puts "------------------------------------"
+//          }
+// Command: get_compare_points -NONequivalent -count
+// Command: if {[get_compare_points -abort -count] > 0} {
+//              puts "-----------------------------"
+//              puts "ERROR: Abort Points detected "
+//              puts "-----------------------------"
+//          }
+// Command: get_compare_points -abort -count
+// Command: if {[get_compare_points -unknown -count] > 0} {
+//              puts "----------------------------------"
+//              puts "ERROR: Unknown Key Points detected"
+//              puts "----------------------------------"
+//          }
+// Command: get_compare_points -unknown -count
+// Command: set lec_version_required "19.10100"
+19.10100
+// Command: if {$lec_version >= $lec_version_required} {
+//          analyze_results -logfiles fv/ei_pe/rtl_to_fv_map.log
+//          }
+// Command: analyze_results -logfiles fv/ei_pe/rtl_to_fv_map.log
+// Analyzing logfile 'fv/ei_pe/rtl_to_fv_map.log'
+// Warning: Resolved hierarchical run misorder by guess.
+// Warning: Analyze results collects information from the log file but does not
+//          qualify the execution or completeness of the run.
+// Logfile Results
+================================================================================
+|                  Conformal Version |24.10-s300 
+|                        Root Module |ei_pe 
+|                           CPU Time |56 sec
+|                       Elapsed Time |71 sec
+|                             Memory |574.05 MB
+|              Power Grid Comparison |N/A 
+|               Power Intent Compare |N/A 
+|           Supply Power Consistency |N/A 
+|        Retention Power Consistency |N/A 
+|             Compare Power Crossing |N/A 
+|                     LEC Comparison |PASS 
+|                 Flatten Comparison |N/A 
+|            Hierarchical Comparison |PASS 
+|                      Logfile Lines |2438 
+|                       Logfile Name |rtl_to_fv_map.log 
+|              Logfile Modified Time |Wed Sep 30 09:27:28 2026 
+|         Implementation Information |fv/ei_pe 
+|       Set Verification Information |/home/s23520966_sonnm/THANHLE/PE/Synthesis/rtl_fv_map_db 
+|      Read Verification Information |N/A 
+|                   Analysis Elapsed |0.2 sec
+|                    Runtime / #Gate |0.0 sec
+|                Maximum Use Threads |4 
+|Matched back-to-back isolation cell |N/A 
+|            Time-consuming commands | 1. set system mode: 27s(38.03%) (execute 4 time(s))
+|                                    | 2. map key points: 8s(11.27%) (execute 1 time(s))
+|                                    | 3. compare: 8s(11.27%) (execute 1 time(s))
+================================================================================
+           
+// Usage Breakdown Summary
+================================================================================
+|Command                   |  Total Elapse Time|  Total CPU Time|    Peak Memory
+--------------------------------------------------------------------------------
+|read library              |                1 s|             0 s|      254.46 MB
+|read design -golden       |                0 s|             0 s|        0.00 MB
+|read design -revised      |                2 s|             0 s|      353.07 MB
+|write hier_compare dofile |                8 s|             7 s|      475.90 MB
+|run hier_compare          |               35 s|            38 s|      573.99 MB
+================================================================================
+           
+// Critical Warnings
+================================================================================
+|Occurrence|Warning
+--------------------------------------------------------------------------------
+|1         |(RTL7.4) Array index in LHS might be out of range
+================================================================================
+           
+           
+// Hierarchical Comparison Information
+--------------------------------------------------------------------------------
+// Hierarchical Run #1
+             
+// Write Dofile Command          : write_hier_compare_dofile hier_tmp1.lec.do -verbose -noexact_pin_match -constraint -usage -replace -balanced_extraction -input_output_pin_equivalence -prepend_string "report_design_data; report_unmapped_points -summary; report_unmapped_points -notmapped; analyze_datapath -module -verbose; eval analyze_datapath $DATAPATH_SOLVER_OPTION -verbose" (line: 1159)
+  # module pair(s) are written for hierarchical comparison: 1
+  # module(s) added as noblack box: 818
+// Run Hier_compare Command      : run_hier_compare hier_tmp1.lec.do -dynamic_hierarchy (line: 2090)
+// Hierarchical Compare Result   : Inconclusive
+// Smart instance selection      : Disable
+           
+// Hierarchical Comparison Statistics
+// Note: No module is compared, skip.
+--------------------------------------------------------------------------------
+// Hierarchical Run #2
+             
+// Write Dofile Command          : N/A
+// Run Hier_compare Command      : run_hier_compare hier_tmp1.lec.do -dynamic_hierarchy (line: 2091)
+// Hierarchical Compare Result   : Equivalent
+// Smart instance selection      : Disable
+           
+// Hierarchical Comparison Statistics
+================================================================================
+|     Modules|       Total|         Max|         Min|         Avg
+--------------------------------------------------------------------------------
+|           1|          40|          40|          40|          40
+================================================================================
+  Modules: Total number of modules.
+  Total: Sum of all module runtimes(sec).
+  Max: Runtime of module with longest runtime.
+  Min: Runtime of module with shortest runtime.
+  Avg: Average runtime of all modules.
+           
+// Bottleneck Modules: 
+// Note: Report skipped due to brief overall runtime
+ 
+// Smart LEC Parallel Hierarchical Comparison Analysis
+// Note: Analysis is skipped due to brief overall runtime
+--------------------------------------------------------------------------------
+               
+// Resource usages of analysis: Cpu=0.26s Mem=552MB
+0
+// Command: vpxmode
+// Command: vpxmode
+// Command: exit -f

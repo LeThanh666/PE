@@ -1,0 +1,18 @@
+    Hinst Name                      Module Name                 Inst Count           Total Area
+--------------------------------------------------------------------------------------------
+ei_pe                                                                40984           103856.166
+ u_acc_u_adder                      ei_adder_fp16_471                 1212             3015.414
+ u_pe_muxpool_mul8_u_mul11          ei_multiplier_17461                934             2124.846
+ u_pe_muxpool_pool_mul_u_mul11      ei_multiplier_17460                976             2244.888
+ u_pe_muxpool_u_max_pooling_g0      ei_fp16_2num_comparator            122              407.664
+ u_pe_muxpool_u_max_pooling_g1      ei_fp16_2num_comparator_494        126              399.114
+ u_pe_muxpool_u_max_pooling_g2      ei_fp16_2num_comparator_493        131              410.400
+ u_pe_muxpool_u_max_pooling_g3      ei_fp16_2num_comparator_492        124              406.638
+ u_pe_muxpool_u_max_pooling_g4      ei_fp16_2num_comparator_491        138              218.880
+ u_pe_muxpool_u_max_pooling_g5      ei_fp16_2num_comparator_490        120              181.944
+ u_pe_muxpool_u_max_pooling_g6      ei_fp16_2num_comparator_489         82              134.406
+ u_pe_muxpool_u_max_pooling_g7      ei_fp16_2num_comparator_488        109              162.792
+ u_pe_muxpool_u_tree_u_add_l2_0     ei_adder_fp16_484                 1377             3447.018
+ u_pe_muxpool_u_tree_u_add_l2_1     ei_adder_fp16_483                 1358             3411.792
+ u_pe_muxpool_u_tree_u_add_l3_0     ei_adder_fp16_482                 1357             3488.058
+ u_pe_muxpool_u_tree_u_add_l4_final ei_adder_fp16_481                 1326             3432.654
