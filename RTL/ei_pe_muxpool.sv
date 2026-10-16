@@ -11,7 +11,8 @@ module ei_pe_muxpool #(
     input  logic        valid_in,
 
     // mode:
-    // 0x = conv
+    // 00 = conv
+    // 01 = FC
     // 10 = avg pool
     // 11 = max pool
     input  logic [1:0] pool_mode,
@@ -27,7 +28,11 @@ module ei_pe_muxpool #(
     input  logic [15:0] const_pool,
 
     output logic [15:0] data_out,
-    output logic        valid_out
+    output logic        valid_out,
+    
+    output logic [15:0] fc_mult_out0, fc_mult_out1, fc_mult_out2,
+    output logic [15:0] fc_mult_out3, fc_mult_out4, fc_mult_out5,
+    output logic [15:0] fc_mult_out6, fc_mult_out7, fc_mult_out8
 );
 
     localparam int LAT_MAXPOOL  = 5;
@@ -52,7 +57,25 @@ module ei_pe_muxpool #(
     ei_multiplier_fp16 mul6 (.sys_clk(sys_clk), .rst(rst), .en(en), .a_in(x6), .b_in(w6), .c_out(p6));
     ei_multiplier_fp16 mul7 (.sys_clk(sys_clk), .rst(rst), .en(en), .a_in(x7), .b_in(w7), .c_out(p7));
     ei_multiplier_fp16 mul8 (.sys_clk(sys_clk), .rst(rst), .en(en), .a_in(x8), .b_in(w8), .c_out(p8));
-
+    
+    // -----------------------------
+    // 1) Multipliers for fc path
+    // -----------------------------
+    wire is_fc = (pool_mode == 2'b01);
+    wire [15:0] fc_mode = {16{is_fc}};
+    wire [15:0] conv_mode = {16{~is_fc}};
+    
+    assign fc_mult_out0 = p0 & fc_mode;
+    assign fc_mult_out1 = p1 & fc_mode;
+    assign fc_mult_out2 = p2 & fc_mode;
+    assign fc_mult_out3 = p3 & fc_mode;
+    assign fc_mult_out4 = p4 & fc_mode;
+    assign fc_mult_out5 = p5 & fc_mode;
+    assign fc_mult_out6 = p6 & fc_mode;
+    assign fc_mult_out7 = p7 & fc_mode;
+    assign fc_mult_out8 = p8 & fc_mode;
+    // -----------------------------
+    
     // -----------------------------
     // 2) Select tree input
     //    pool_mode[1] = 0 -> conv products p0..p8
@@ -69,7 +92,22 @@ module ei_pe_muxpool #(
     ei_muxN #(.WIDTH(16)) mux6 (.d0(p6), .d1(pool6), .s(pool_mode[1]), .y(t6));
     ei_muxN #(.WIDTH(16)) mux7 (.d0(p7), .d1(pool7), .s(pool_mode[1]), .y(t7));
     ei_muxN #(.WIDTH(16)) mux8 (.d0(p8), .d1(pool8), .s(pool_mode[1]), .y(t8));
-
+    
+    // -----------------------------
+    //  update
+    // -----------------------------
+    logic [15:0] t_gated0, t_gated1, t_gated2, t_gated3, t_gated4, t_gated5, t_gated6, t_gated7, t_gated8;
+    
+    assign t_gated0 = t0 & conv_mode;
+    assign t_gated1 = t1 & conv_mode;
+    assign t_gated2 = t2 & conv_mode;
+    assign t_gated3 = t3 & conv_mode;
+    assign t_gated4 = t4 & conv_mode;
+    assign t_gated5 = t5 & conv_mode;
+    assign t_gated6 = t6 & conv_mode;
+    assign t_gated7 = t7 & conv_mode;
+    assign t_gated8 = t8 & conv_mode;
+    
     // -----------------------------
     // 3) Tree adder
     // -----------------------------
@@ -77,9 +115,9 @@ module ei_pe_muxpool #(
         .sys_clk(sys_clk),
         .rst    (rst),
         .en     (en),
-        .in0(t0), .in1(t1), .in2(t2),
-        .in3(t3), .in4(t4), .in5(t5),
-        .in6(t6), .in7(t7), .in8(t8),
+        .in0(t_gated0), .in1(t_gated1), .in2(t_gated2),
+        .in3(t_gated3), .in4(t_gated4), .in5(t_gated5),
+        .in6(t_gated6), .in7(t_gated7), .in8(t_gated8),
         .sum_out(sum_out)
     );
 
@@ -93,9 +131,9 @@ module ei_pe_muxpool #(
         .rst    (rst),
         .en     (en),
 
-        .d0(t0), .d1(t1), .d2(t2),
-        .d3(t3), .d4(t4), .d5(t5),
-        .d6(t6), .d7(t7), .d8(t8),
+        .d0(t_gated0), .d1(t_gated1), .d2(t_gated2),
+        .d3(t_gated3), .d4(t_gated4), .d5(t_gated5),
+        .d6(t_gated6), .d7(t_gated7), .d8(t_gated8),
 
         .max_out(max_out_raw)
     );
